@@ -16,7 +16,12 @@
 								th:value="${recipeEntry?.header}" />
 						</div>
 						<div class="form-group">
-							<label for="recipeType">recipe tipi</label> <select
+							<label for="recipeTag">etiketler [virgülle ayrılmış]</label> <input
+								type="text" class="form-control" name="recipeTag" id="recipeTag"
+								th:value="${recipeEntry?.tags}" />
+						</div>
+						<div class="form-group">
+							<label for="recipeType">tarif tipi</label> <select
 								name="recipeType" id="recipeType" class="form-control">
 								<option th:each="type : ${recipeTypes}" th:value="${type}"
 									th:selected="${type == recipeEntry?.recipeType}"
@@ -24,10 +29,31 @@
 							</select>
 						</div>
 						<div class="form-group">
+							<label for="recipeType">tarif zorluğu</label> <select
+								name="recipeDifficulty" id="recipeDifficulty"
+								class="form-control">
+								<option th:each="type : ${recipeDifficulties}"
+									th:value="${type}"
+									th:selected="${type == recipeEntry?.recipeDifficulty}"
+									th:text="${type.title}"></option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="recipeDuration">süre [dk]</label> <input
+								type="number" class="form-control" name="recipeDuration"
+								id="recipeDuration" th:value="${recipeEntry?.durationInMinutes}" />
+						</div>
+						<div class="form-group">
 							<label for="recipeIngredient">malzemeler</label>
 							<textarea class="form-control" name="recipeIngredient" rows="10"
 								maxlength="100000" cols="80" id="recipeIngredient"
 								th:text="${recipeEntry?.ingredients}"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="recipeTool">araç-gereçler</label>
+							<textarea class="form-control" name="recipeTool" rows="10"
+								maxlength="100000" cols="80" id="recipeTool"
+								th:text="${recipeEntry?.tools}"></textarea>
 						</div>
 						<div class="form-group">
 							<label for="recipeEntrance">giriş</label>
@@ -49,6 +75,14 @@
 					</form>
 					<script type="text/javascript">
 						$(function() {
+							CKEDITOR.replace('recipeTool');
+							CKEDITOR.instances['recipeTool'].on('contentDom', function() {
+								this.document.on('keypress', function(e) {
+									for ( var instance in CKEDITOR.instances) {
+										CKEDITOR.instances[instance].updateElement();
+									}
+								});
+							});
 							CKEDITOR.replace('recipeIngredient');
 							CKEDITOR.instances['recipeIngredient'].on('contentDom', function() {
 								this.document.on('keypress', function(e) {
@@ -97,6 +131,11 @@
 									recipeRecipe : {
 										required : true,
 										minlength : 2
+									},
+									recipeDuration : {
+										required : true,
+										min : 2,
+										max : 1000
 									}
 								},
 								submitHandler : function(form) {

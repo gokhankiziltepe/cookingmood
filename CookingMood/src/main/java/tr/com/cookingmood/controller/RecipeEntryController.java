@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import tr.com.cookingmood.constants.RecipeDifficulties;
 import tr.com.cookingmood.constants.RecipeTypes;
 import tr.com.cookingmood.model.RecipeEntry;
 import tr.com.cookingmood.service.RecipeEntryService;
@@ -24,20 +25,28 @@ public class RecipeEntryController {
 
 	@RequestMapping(value = "/admin/recipe-entry/save", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> recipeEntry(@RequestParam(value = "id", required = false) Long id,
-			@RequestParam("recipeHeader") String header, @RequestParam("recipeIngredient") String ingredients,
-			@RequestParam("recipeEntrance") String entrance, @RequestParam("recipeRecipe") String recipe,
-			@RequestParam("recipeType") RecipeTypes recipeType) {
+			@RequestParam("recipeHeader") String recipeHeader,
+			@RequestParam("recipeIngredient") String recipeIngredient,
+			@RequestParam("recipeEntrance") String recipeEntrance, @RequestParam("recipeRecipe") String recipeRecipe,
+			@RequestParam("recipeType") RecipeTypes recipeType,
+			@RequestParam("recipeDifficulty") RecipeDifficulties recipeDifficulty,
+			@RequestParam("recipeTool") String recipeTool, @RequestParam("recipeTag") String recipeTag,
+			@RequestParam("recipeDuration") int recipeDuration) {
 		RecipeEntry recipeEntry = null;
 		if (id != null) {
 			recipeEntry = recipeEntryService.findOne(id);
 		} else {
 			recipeEntry = new RecipeEntry();
 		}
-		recipeEntry.setHeader(header);
-		recipeEntry.setIngredients(ingredients);
-		recipeEntry.setEntrance(entrance);
-		recipeEntry.setRecipe(recipe);
+		recipeEntry.setHeader(recipeHeader);
+		recipeEntry.setTags(recipeTag);
+		recipeEntry.setIngredients(recipeIngredient);
+		recipeEntry.setTools(recipeTool);
+		recipeEntry.setEntrance(recipeEntrance);
+		recipeEntry.setRecipe(recipeRecipe);
 		recipeEntry.setRecipeType(recipeType);
+		recipeEntry.setRecipeDifficulty(recipeDifficulty);
+		recipeEntry.setDurationInMinutes(recipeDuration);
 		recipeEntryService.save(recipeEntry);
 		return new HashMap<>();
 	}

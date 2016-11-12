@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import tr.com.cookingmood.constants.BlogTypes;
+import tr.com.cookingmood.constants.RecipeDifficulties;
 import tr.com.cookingmood.constants.RecipeTypes;
 import tr.com.cookingmood.model.BlogEntry;
 import tr.com.cookingmood.model.RecipeEntry;
@@ -53,6 +54,7 @@ public class HomeController {
 	public ModelAndView recipeEntry(@RequestParam(value = "id", required = false) Long id) {
 		Map<String, Object> modelMap = new HashMap<>();
 		modelMap.put("recipeTypes", RecipeTypes.values());
+		modelMap.put("recipeDifficulties", RecipeDifficulties.values());
 		if (id != null) {
 			RecipeEntry recipeEntry = recipeEntryService.findOne(id);
 			modelMap.put("recipeEntry", recipeEntry);

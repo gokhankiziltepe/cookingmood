@@ -25,3 +25,7 @@ div.loader {
 	background: #FFF url('../images/loading.gif') no-repeat center center;
 	opacity: 0.8;
 }
+
+ul {
+	list-style: none;
+}

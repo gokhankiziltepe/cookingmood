@@ -12,7 +12,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">cookingmood</a>
+				<a class="navbar-brand" href="@{/admin}">cookingmood</a>
 			</div>
 			<div class="navbar-collapse collapse"
 				th:if="${#authorization.expression('isAuthenticated()')}">
