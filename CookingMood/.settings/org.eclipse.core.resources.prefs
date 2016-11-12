@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/admin.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/blog-entry.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/admin/admin.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/admin/blog-entry.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/admin/recipe-entry.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/login/login-container.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/recipe-entry.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
