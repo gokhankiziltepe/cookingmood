@@ -11,11 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" th:href="@{/resources/css/style.css}" />
 <link rel="stylesheet" th:href="@{/resources/css/cookingmood.css}" />
-<script th:src="@{/resources/js/vendor/modernizr.js}"></script>
-<script th:src="@{/resources/js/jquery-2.1.0.min.js}"></script>
-<script th:src="@{/resources/js/foundation.min.js}"></script>
-<script th:src="@{/resources/js/app.js}"></script>
-<script th:src="@{/resources/js/wow.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/vendor/modernizr.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/jquery-2.1.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/foundation.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/app.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/wow.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/cookingmood.js}"></script>
+<script
+	th:src="@{//cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js}"></script>
 <script>
 	$(function() {
 		jQuery(document).foundation({

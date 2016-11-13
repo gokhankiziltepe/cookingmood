@@ -19,4 +19,9 @@ public class EntityBaseServiceImpl implements EntityBaseService {
 	public EntityBase save(EntityBase entityBase) {
 		return repository.save(entityBase);
 	}
+
+	@Override
+	public EntityBase findOne(Long id) {
+		return repository.findOne(id);
+	}
 }

@@ -7,8 +7,8 @@
 	<!-- header -->
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
+	<section class="content-padding" th:fragment="comment">
 
-	<section class="content-padding">
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
@@ -28,8 +28,9 @@
 						<li th:each="headerImagePath : ${headerImagePaths}">
 							<div class="entry-cover"
 								th:attr="style=${'background-image: url(' + webdavBase + '' + headerImagePath + ');'}">
-								<a href="" class="like-it"><i class="fa fa-heart-o"></i></a><a
-									href="" class="all"></a>
+								<a href="javascript:void(0)" class="like-it"
+									th:attr="data-entitybaseid=${entityBaseId}"><i
+									class="fa fa-heart-o"></i></a><a href="" class="all"></a>
 							</div>
 						</li>
 				</div>
@@ -82,135 +83,31 @@
 				</ul>
 			</div>
 		</div>
+		<script type="text/javascript" th:inline="javascript">
+			$(function() {
+				$('.like-it').click(function() {
+					/*[+
+					 var urlToload = [[@{/like/save}]];
+					 +]*/
+					var entityBaseId = $(this).data('entitybaseid');
+					$.ajax({
+						url : urlToload,
+						type : 'POST',
+						data : {
+							likedEntityBaseId : entityBaseId
+						},
+						error : function(error) {
+							alert(error.responseText);
+						},
+						dataType : "json",
+						success : function(data) {
+						},
+					});
+				});
+			});
+		</script>
 
-		<div class="row">
-			<div
-				class="large-12 medium-12 small-12 columns blog-text text-justify">
-				<h4>Comments:</h4>
-
-				<ul id="comments" class="wow zoomIn" data-wow-offset="350">
-					<li class="comment">
-						<div class="row">
-							<div class="large-2 medium-2 small-3 columns hide-for-small-only">
-								<p>
-									<a href=""><img th:src="@{/resources/img/avatar.jpg}"></a>
-								</p>
-							</div>
-							<div class="large-10 medium-10 small-12 columns">
-								<p>
-									<strong><a href="">John Doe</a></strong>, 22.12.2014, 12:09,
-									Warsaw
-								</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Etiam at luctus elit. Pellentesque ornare eros vel suscipit
-									sodales. Duis accumsan ultricies massa ut dictum. Ut vitae
-									blandit ligula, ac rhoncus sapien. In condimentum erat dui, ut
-									lobortis dolor maximus nec. Phasellus a risus sit amet leo
-									placerat imperdiet sit amet id ligula. Vivamus lobortis augue
-									sollicitudin magna cursus mollis.</p>
-								<p class="text-right">
-									<a href="" class="read">Reply &raquo;</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="comment">
-						<div class="row">
-							<div class="large-2 medium-2 small-3 columns hide-for-small-only">
-								<p>
-									<a href=""><img th:src="@{/resources/img/avatar.jpg}"></a>
-								</p>
-							</div>
-							<div class="large-10 medium-10 small-12 columns">
-								<p>
-									<strong><a href="">John Doe</a></strong>, 22.12.2014, 12:09,
-									Warsaw
-								</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Etiam at luctus elit. Pellentesque ornare eros vel suscipit
-									sodales. Duis accumsan ultricies massa ut dictum. Ut vitae
-									blandit ligula, ac rhoncus sapien. In condimentum erat dui, ut
-									lobortis dolor maximus nec. Phasellus a risus sit amet leo
-									placerat imperdiet sit amet id ligula. Vivamus lobortis augue
-									sollicitudin magna cursus mollis.</p>
-								<p class="text-right">
-									<a href="" class="read">Reply &raquo;</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="comment">
-						<div class="row">
-							<div class="large-2 medium-2 small-3 columns hide-for-small-only">&nbsp;</div>
-							<div class="large-2 medium-2 small-3 columns hide-for-small-only">
-								<p>
-									<a href=""><img th:src="@{/resources/img/avatar.jpg}"></a>
-								</p>
-							</div>
-							<div class="large-8 medium-8 small-12 columns">
-								<p>
-									<strong><a href="">John Doe</a></strong>, 22.12.2014, 12:09,
-									Warsaw
-								</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Etiam at luctus elit. Pellentesque ornare eros vel suscipit
-									sodales. Duis accumsan ultricies massa ut dictum. Ut vitae
-									blandit ligula, ac rhoncus sapien. In condimentum erat dui, ut
-									lobortis dolor maximus nec. Phasellus a risus sit amet leo
-									placerat imperdiet sit amet id ligula. Vivamus lobortis augue
-									sollicitudin magna cursus mollis.</p>
-								<p class="text-right">
-									<a href="" class="read">Reply &raquo;</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="comment">
-						<div class="row">
-							<div class="large-2 medium-2 small-3 columns hide-for-small-only">
-								<p>
-									<a href=""><img th:src="@{/resources/img/avatar.jpg}"></a>
-								</p>
-							</div>
-							<div class="large-10 medium-10 small-12 columns">
-								<p>
-									<strong><a href="">John Doe</a></strong>, 22.12.2014, 12:09,
-									Warsaw
-								</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Etiam at luctus elit. Pellentesque ornare eros vel suscipit
-									sodales. Duis accumsan ultricies massa ut dictum. Ut vitae
-									blandit ligula, ac rhoncus sapien. In condimentum erat dui, ut
-									lobortis dolor maximus nec. Phasellus a risus sit amet leo
-									placerat imperdiet sit amet id ligula. Vivamus lobortis augue
-									sollicitudin magna cursus mollis.</p>
-								<p class="text-right">
-									<a href="" class="read">Reply &raquo;</a>
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-				<h4>Yorum gönder:</h4>
-				<form class="wow zoomIn" data-wow-offset="350">
-					<div class="row">
-						<div class="large-12 medium-12 small-12 columns">
-							<textarea placeholder="Yorumun"></textarea>
-						</div>
-						<div class="large-4 medium-12 small-12 columns">
-							<input type="email" placeholder="E-posta adresin">
-						</div>
-						<div class="large-4 medium-12 small-12 columns">
-							<input type="text" placeholder="Adın">
-						</div>
-						<div class="large-4 medium-12 small-12 columns">
-							<input type="submit" value="yorumu gönder">
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
+		<div th:replace="fragments/site/comment :: comment"></div>
 	</section>
 	<div th:replace="fragments/site/footer :: footer"></div>
 </body>

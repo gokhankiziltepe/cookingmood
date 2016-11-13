@@ -6,6 +6,7 @@ encoding//WebContent/WEB-INF/views/fragments/admin/blog-entry.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/admin/recipe-entry.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/header.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/login/login-container.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/fragments/site/comment.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/site/footer.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/site/headFragment.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/fragments/site/header.jsp=UTF-8

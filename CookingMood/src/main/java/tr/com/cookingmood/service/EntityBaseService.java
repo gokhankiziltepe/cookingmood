@@ -6,4 +6,6 @@ public interface EntityBaseService {
 
 	EntityBase save(EntityBase entityBase);
 
+	EntityBase findOne(Long id);
+
 }
