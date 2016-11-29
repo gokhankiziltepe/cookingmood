@@ -16,8 +16,13 @@
 								th:value="${blogEntry?.header}" />
 						</div>
 						<div class="form-group">
-							<label for="blogType">blog tipi</label> <select
-								name="blogType" id="blogType" class="form-control">
+							<label for="blogTag">etiketler [virgülle ayrılmış]</label> <input
+								type="text" class="form-control" name="blogTag" id="blogTag"
+								th:value="${blogEntry?.tags}" />
+						</div>
+						<div class="form-group">
+							<label for="blogType">blog tipi</label> <select name="blogType"
+								id="blogType" class="form-control">
 								<option th:each="type : ${blogTypes}" th:value="${type}"
 									th:selected="${type == blogEntry?.blogType}"
 									th:text="${type.title}"></option>
@@ -38,13 +43,11 @@
 					<script type="text/javascript">
 						$(function() {
 							CKEDITOR.replace('blogContent');
-							CKEDITOR.instances['blogContent'].on('contentDom', function() {
-								this.document.on('keypress', function(e) {
-									for ( var instance in CKEDITOR.instances) {
-										CKEDITOR.instances[instance].updateElement();
-									}
-								});
-							});
+							setInterval(function() {
+								for ( var instance in CKEDITOR.instances) {
+									CKEDITOR.instances[instance].updateElement();
+								}
+							}, 1000);
 
 							$("#blogEntryForm").validate({
 								ignore : [],

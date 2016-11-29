@@ -19,4 +19,9 @@ public class FeedbackLikeServiceImpl implements FeedbackLikeService {
 		return repository.save(feedbackLike);
 	}
 
+	@Override
+	public int countByLikedEntity(Long id) {
+		return repository.countByLikedEntity_Id(id);
+	}
+
 }

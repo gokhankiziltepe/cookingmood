@@ -25,7 +25,7 @@ public class BlogEntryController {
 	@RequestMapping(value = "/admin/blog-entry/save", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> blogEntry(@RequestParam(value = "id", required = false) Long id,
 			@RequestParam("blogHeader") String header, @RequestParam("blogContent") String content,
-			@RequestParam("blogType") BlogTypes blogType) {
+			@RequestParam("blogType") BlogTypes blogType, @RequestParam("blogTag") String blogTag) {
 		BlogEntry blogEntry = null;
 		if (id != null) {
 			blogEntry = blogEntryService.findOne(id);
@@ -34,6 +34,7 @@ public class BlogEntryController {
 		}
 		blogEntry.setHeader(header);
 		blogEntry.setText(content);
+		blogEntry.setTags(blogTag);
 		blogEntry.setBlogType(blogType);
 		blogEntryService.save(blogEntry);
 		return new HashMap<>();

@@ -76,37 +76,18 @@
 					<script type="text/javascript">
 						$(function() {
 							CKEDITOR.replace('recipeTool');
-							CKEDITOR.instances['recipeTool'].on('contentDom', function() {
-								this.document.on('keypress', function(e) {
-									for ( var instance in CKEDITOR.instances) {
-										CKEDITOR.instances[instance].updateElement();
-									}
-								});
-							});
+
 							CKEDITOR.replace('recipeIngredient');
-							CKEDITOR.instances['recipeIngredient'].on('contentDom', function() {
-								this.document.on('keypress', function(e) {
-									for ( var instance in CKEDITOR.instances) {
-										CKEDITOR.instances[instance].updateElement();
-									}
-								});
-							});
+
 							CKEDITOR.replace('recipeEntrance');
-							CKEDITOR.instances['recipeEntrance'].on('contentDom', function() {
-								this.document.on('keypress', function(e) {
-									for ( var instance in CKEDITOR.instances) {
-										CKEDITOR.instances[instance].updateElement();
-									}
-								});
-							});
+
 							CKEDITOR.replace('recipeRecipe');
-							CKEDITOR.instances['recipeRecipe'].on('contentDom', function() {
-								this.document.on('keypress', function(e) {
-									for ( var instance in CKEDITOR.instances) {
-										CKEDITOR.instances[instance].updateElement();
-									}
-								});
-							});
+
+							setInterval(function() {
+								for ( var instance in CKEDITOR.instances) {
+									CKEDITOR.instances[instance].updateElement();
+								}
+							}, 1000);
 
 							$("#recipeEntryForm").validate({
 								ignore : [],

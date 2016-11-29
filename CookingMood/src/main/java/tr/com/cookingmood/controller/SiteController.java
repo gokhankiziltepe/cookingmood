@@ -9,18 +9,24 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.sardine.DavResource;
 import com.github.sardine.Sardine;
 import com.github.sardine.SardineFactory;
 
+import tr.com.cookingmood.model.BlogEntry;
 import tr.com.cookingmood.model.FeedbackComment;
 import tr.com.cookingmood.model.RecipeEntry;
+import tr.com.cookingmood.service.BlogEntryService;
 import tr.com.cookingmood.service.FeedbackCommentService;
+import tr.com.cookingmood.service.FeedbackLikeService;
 import tr.com.cookingmood.service.RecipeEntryService;
 import tr.com.cookingmood.utils.CookingMoodUtils;
 
@@ -29,7 +35,11 @@ public class SiteController {
 	@Autowired
 	private RecipeEntryService recipeEntryService;
 	@Autowired
+	private BlogEntryService blogEntryService;
+	@Autowired
 	private FeedbackCommentService feedbackCommentService;
+	@Autowired
+	private FeedbackLikeService feedbackLikeService;
 
 	@Value("${webdav.path}")
 	private String webdavPath;
@@ -38,14 +48,41 @@ public class SiteController {
 	@Value("${webdav.password}")
 	private String webdavPassword;
 
-	@RequestMapping(value = "/recipe", method = RequestMethod.GET)
-	public ModelAndView admin() {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView home() {
 		Map<String, Object> modelMap = new HashMap<>();
-		return new ModelAndView("recipe", modelMap);
+		return new ModelAndView("home", modelMap);
+	}
+
+	@RequestMapping(value = "/about-me", method = RequestMethod.GET)
+	public ModelAndView aboutMe() {
+		Map<String, Object> modelMap = new HashMap<>();
+		return new ModelAndView("about-me", modelMap);
+	}
+
+	@RequestMapping(value = "/recipe", method = RequestMethod.GET)
+	public ModelAndView recipes(@RequestParam(name = "searchText", required = false) String searchText) {
+		Map<String, Object> modelMap = new HashMap<>();
+		List<RecipeEntry> activeRecipes = new ArrayList<>();
+		if (StringUtils.isEmpty(searchText)) {
+			activeRecipes = recipeEntryService.findAllActives();
+		} else {
+			activeRecipes = recipeEntryService.findBySearchText(searchText);
+		}
+		if (!CollectionUtils.isEmpty(activeRecipes)) {
+			modelMap.put("recipes", activeRecipes);
+			Map<Long, Object> likeMap = new HashMap<>();
+			for (RecipeEntry item : activeRecipes) {
+				int countByLikedEntity = feedbackLikeService.countByLikedEntity(item.getId());
+				likeMap.put(item.getId(), countByLikedEntity);
+			}
+			modelMap.put("likeMap", likeMap);
+		}
+		return new ModelAndView("recipes", modelMap);
 	}
 
 	@RequestMapping(value = "/recipe/{id}", method = RequestMethod.GET)
-	public ModelAndView admin(@PathVariable("id") Long id) throws IOException {
+	public ModelAndView recipeDetail(@PathVariable("id") Long id) throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
 		RecipeEntry recipeEntry = recipeEntryService.findOne(id);
 		modelMap.put("recipeDetail", recipeEntry);
@@ -77,6 +114,58 @@ public class SiteController {
 		}
 		modelMap.put("recipeImagePaths", recipeImagePaths);
 		return new ModelAndView("recipe-detail", modelMap);
+	}
+
+	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	public ModelAndView blogs() {
+		Map<String, Object> modelMap = new HashMap<>();
+		List<BlogEntry> activeBlogs = blogEntryService.findAllActives();
+
+		if (!CollectionUtils.isEmpty(activeBlogs)) {
+			modelMap.put("blogs", activeBlogs);
+			Map<Long, Object> likeMap = new HashMap<>();
+			for (BlogEntry item : activeBlogs) {
+				int countByLikedEntity = feedbackLikeService.countByLikedEntity(item.getId());
+				likeMap.put(item.getId(), countByLikedEntity);
+			}
+			modelMap.put("likeMap", likeMap);
+		}
+		return new ModelAndView("blogs", modelMap);
+	}
+
+	@RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
+	public ModelAndView blogDetail(@PathVariable("id") Long id) throws IOException {
+		Map<String, Object> modelMap = new HashMap<>();
+		BlogEntry blogEntry = blogEntryService.findOne(id);
+		modelMap.put("blogDetail", blogEntry);
+		modelMap.put("entityBaseId", id);
+
+		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(id);
+		modelMap.put("comments", comments);
+
+		Sardine sardine = SardineFactory.begin("test", "test");
+
+		List<String> headerImagePaths = new ArrayList<>();
+		List<DavResource> resources = sardine
+				.list(webdavPath + "/images/blog/" + blogEntry.getWebdavPath() + "/header");
+		for (DavResource res : resources) {
+			String path = res.getPath();
+			if (CookingMoodUtils.isValidResourcePath(path)) {
+				headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+			}
+		}
+		modelMap.put("headerImagePaths", headerImagePaths);
+
+		List<String> blogImagePaths = new ArrayList<>();
+		resources = sardine.list(webdavPath + "/images/blog/" + blogEntry.getWebdavPath() + "/blog");
+		for (DavResource res : resources) {
+			String path = res.getPath();
+			if (CookingMoodUtils.isValidResourcePath(path)) {
+				blogImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+			}
+		}
+		modelMap.put("blogImagePaths", blogImagePaths);
+		return new ModelAndView("blog-detail", modelMap);
 	}
 
 }

@@ -31,4 +31,9 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 	public BlogEntry findOne(Long id) {
 		return repository.findOne(id);
 	}
+
+	@Override
+	public List<BlogEntry> findAllActives() {
+		return repository.findByActiveTrue();
+	}
 }

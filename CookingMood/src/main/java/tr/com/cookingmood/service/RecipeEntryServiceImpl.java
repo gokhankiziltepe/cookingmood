@@ -31,4 +31,14 @@ public class RecipeEntryServiceImpl implements RecipeEntryService {
 	public RecipeEntry findOne(Long id) {
 		return repository.findOne(id);
 	}
+
+	@Override
+	public List<RecipeEntry> findAllActives() {
+		return repository.findByActiveTrue();
+	}
+
+	@Override
+	public List<RecipeEntry> findBySearchText(String text) {
+		return repository.findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCase(text, text);
+	}
 }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="tr">
 <head
-	th:include="fragments/site/headFragment :: headFragment (pageTitle=${recipeDetail?.header} + '- CookingMood', pageKeywords=${recipeDetail?.tags})">
+	th:include="fragments/site/headFragment :: headFragment (pageTitle=${blogDetail?.header} + '- CookingMood', pageKeywords=${blogDetail?.tags})">
 </head>
 <body>
 	<!-- header -->
@@ -13,7 +13,7 @@
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
 					<h3 class="margin0 fontsans">
-						<span th:text="${recipeDetail?.header}"></span>
+						<span th:text="${blogDetail?.header}"></span>
 					</h3>
 				</div>
 			</div>
@@ -35,41 +35,11 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="large-4 medium-4 small-12 blog-text columns">
-				<div class="ingredients">
-					<h5 class="fontsans">Genel Bilgiler:</h5>
-					<ul>
-						<li>Tür: <span th:text="${recipeDetail?.recipeType.title}"></span></li>
-						<li>Zorluk: <span
-							th:text="${recipeDetail?.recipeDifficulty.title}"></span></li>
-						<li>Süre: <span th:text="${recipeDetail?.durationInMinutes}"></span></li>
-					</ul>
-				</div>
-				<br />
-				<div class="ingredients">
-					<h5 class="fontsans">Araç-Gereçler:</h5>
-					<div th:remove="tag" th:utext="${recipeDetail?.tools}"></div>
-				</div>
-				<br />
-				<div class="ingredients">
-					<h5 class="fontsans">Malzemeler:</h5>
-					<div th:remove="tag" th:utext="${recipeDetail?.ingredients}">
-					</div>
-				</div>
-			</div>
-			<div class="large-8 medium-8 small-12 blog-text columns">
-				<div th:remove="tag" th:utext="${recipeDetail?.entrance}"></div>
-				<h5 class="fontsans">Reçete:</h5>
-				<div th:remove="tag" th:utext="${recipeDetail?.recipe}"></div>
-				<ul
-					class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 clearing-thumbs wow flipInX"
-					data-clearing data-wow-offset="350">
-					<li th:each="recipeImagePath : ${recipeImagePaths}"><a
-						th:href="@{${webdavBase + recipeImagePath}}" target="_blank"><img
-							th:src="@{${webdavBase + recipeImagePath}}"></a></li>
-				</ul>
+
+			<div
+				class="large-9 medium-12 small-12 large-centered columns blog-text text-justify">
+				<div th:remove="tag" th:utext="${blogDetail?.text}"></div>
 
 				<ul class="soc">
 					<li><a class="soc-instagram" target="_blank"
@@ -104,6 +74,7 @@
 				});
 			});
 		</script>
+
 		<div th:replace="fragments/site/comment :: comment"></div>
 	</section>
 	<div th:replace="fragments/site/footer :: footer"></div>

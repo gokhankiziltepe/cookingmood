@@ -22,6 +22,9 @@ public class BlogEntry extends EntityBase {
 	@Column(name = "BLOG_TYPE")
 	private BlogTypes blogType;
 
+	@Column(name = "TAGS", length = 1024)
+	private String tags;
+
 	public String getText() {
 		return text;
 	}
@@ -48,6 +51,14 @@ public class BlogEntry extends EntityBase {
 
 	public String getWebdavPath() {
 		return CookingMoodUtils.getWebdavPath(this.header);
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
 	}
 
 }

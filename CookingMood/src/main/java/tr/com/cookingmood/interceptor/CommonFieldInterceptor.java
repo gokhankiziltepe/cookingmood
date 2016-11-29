@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import tr.com.cookingmood.constants.BlogTypes;
 import tr.com.cookingmood.constants.RecipeTypes;
 
 public class CommonFieldInterceptor extends HandlerInterceptorAdapter {
@@ -15,6 +16,7 @@ public class CommonFieldInterceptor extends HandlerInterceptorAdapter {
 
 	public static final String PATH = "path";
 	public static final String RECIPE_TYPES = "recipeTypes";
+	public static final String BLOG_TYPES = "blogTypes";
 	public static final String WEBDAV_BASE = "webdavBase";
 
 	@Override
@@ -22,6 +24,7 @@ public class CommonFieldInterceptor extends HandlerInterceptorAdapter {
 			final ModelAndView modelAndView) throws Exception {
 		if (modelAndView != null) {
 			modelAndView.getModelMap().addAttribute(RECIPE_TYPES, RecipeTypes.values());
+			modelAndView.getModelMap().addAttribute(BLOG_TYPES, BlogTypes.values());
 			modelAndView.getModelMap().addAttribute(WEBDAV_BASE, webdavBase);
 			modelAndView.getModelMap().addAttribute(PATH, request.getServletPath());
 		}

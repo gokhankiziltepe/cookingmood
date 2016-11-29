@@ -3,8 +3,8 @@
 <meta name="_csrf_parameter" th:attr="content=${_csrf.parameterName}" />
 <meta name="_csrf_header" content="X-CSRF-TOKEN" />
 <meta name="_csrf" th:attr="content=${_csrf.token}" />
-<meta name="keywords" content="${pageKeywords}">
-<meta name="description" content="${pageTitle}">
+<meta name="keywords" th:content="${pageKeywords}">
+<meta name="description" th:content="${pageTitle}">
 <meta name="author" content="Ayça Erdem - CookingMood">
 <title th:text="${pageTitle}"></title>
 <link rel="icon" th:href="@{/resources/images/team/team-member-1.jpg}" />

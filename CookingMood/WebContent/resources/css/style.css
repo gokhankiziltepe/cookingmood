@@ -292,7 +292,7 @@ a:hover {
 	cursor: pointer;
 }
 
-form#findrecipe {
+form#findRecipe {
 	margin: 5rem auto 0 auto;
 	width: 40%;
 	background: rgba(255, 255, 255, 1);
@@ -300,7 +300,7 @@ form#findrecipe {
 	padding: 7px 20px;
 }
 
-form#findrecipe input[type="text"] {
+form#findRecipe input[type="text"] {
 	margin: 0px;
 	border: 0px;
 	box-shadow: none;
@@ -309,11 +309,11 @@ form#findrecipe input[type="text"] {
 	font-weight: 700;
 }
 
-form#findrecipe input[type="text"]:focus {
+form#findRecipe input[type="text"]:focus {
 	background: rgba(255, 255, 255, 1);
 }
 
-form#findrecipe input[type="submit"] {
+form#findRecipe input[type="submit"] {
 	width: 100%;
 	background: url(../img/search.png) no-repeat 80% 50%;
 	border: none;

@@ -7,5 +7,5 @@ import tr.com.cookingmood.model.FeedbackLike;
 
 @Transactional
 public interface FeedbackLikeRepository extends JpaRepository<FeedbackLike, Long> {
-
+	int countByLikedEntity_Id(Long id);
 }

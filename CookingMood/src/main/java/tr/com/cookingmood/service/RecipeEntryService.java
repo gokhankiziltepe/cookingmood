@@ -10,6 +10,10 @@ public interface RecipeEntryService {
 
 	List<RecipeEntry> findAll();
 
+	List<RecipeEntry> findAllActives();
+
 	RecipeEntry findOne(Long id);
+
+	List<RecipeEntry> findBySearchText(String text);
 
 }

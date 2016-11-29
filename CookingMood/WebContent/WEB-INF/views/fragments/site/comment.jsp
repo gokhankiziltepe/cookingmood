@@ -3,13 +3,13 @@
 <head>
 </head>
 <body>
-	<div class="row commentsList" th:fragment="comment"
-		th:unless="${#lists.isEmpty(comments)}">
+	<div class="row commentsList" th:fragment="comment">
 		<div
 			class="large-12 medium-12 small-12 columns blog-text text-justify">
-			<h4>Yorumlar:</h4>
+			<h4 th:unless="${#lists.isEmpty(comments)}">Yorumlar:</h4>
 
-			<ul id="comments" class="wow zoomIn" data-wow-offset="350">
+			<ul id="comments" class="wow zoomIn" data-wow-offset="350"
+				th:unless="${#lists.isEmpty(comments)}">
 				<li class="comment" th:each="comment : ${comments}">
 					<div class="row">
 						<div class="large-2 medium-2 small-3 columns hide-for-small-only">
@@ -94,9 +94,10 @@
 							$("span.error").parent().addClass('hide');
 							var data = $("#commentForm").serialize();
 							/*[+
-							 var urlToload = [[@{/comment/save}]];
-							 var urlToload2 = [[@{/comment/get/}+${entityBaseId}]];
-							 +]*/
+							 var
+							urlToload=[[@{/comment/save}]]; var
+							urlToload2=[[@{/comment/get/}+${entityBaseId}]];
+							+]*/
 							$.ajax({
 								url : urlToload,
 								type : 'POST',
