@@ -60,6 +60,12 @@ public class SiteController {
 		return new ModelAndView("about-me", modelMap);
 	}
 
+	@RequestMapping(value = "/contact-me", method = RequestMethod.GET)
+	public ModelAndView contactMe() {
+		Map<String, Object> modelMap = new HashMap<>();
+		return new ModelAndView("contact-me", modelMap);
+	}
+
 	@RequestMapping(value = "/recipe", method = RequestMethod.GET)
 	public ModelAndView recipes(@RequestParam(name = "searchText", required = false) String searchText) {
 		Map<String, Object> modelMap = new HashMap<>();

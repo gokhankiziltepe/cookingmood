@@ -7,6 +7,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,8 @@ public class CommentController {
 	private FeedbackCommentService feedbackCommentService;
 	@Autowired
 	private EntityBaseService entityBaseService;
+	@Autowired
+	private JavaMailSender mailSender;
 
 	@RequestMapping(value = "/comment/save", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> saveComment(@RequestParam("commentText") String commentText,
@@ -39,6 +43,33 @@ public class CommentController {
 		EntityBase findOne = entityBaseService.findOne(commentEntityBaseId);
 		comment.setLikedEntity(findOne);
 		feedbackCommentService.save(comment);
+		return new HashMap<>();
+	}
+
+	@RequestMapping(value = "/contact/save", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> saveContact(@RequestParam("name") String name,
+			@RequestParam("message") String message, @RequestParam("email") String email) {
+		SimpleMailMessage emailMessage = new SimpleMailMessage();
+
+		emailMessage.setFrom("info@cookingmood.co");
+		emailMessage.setTo("info@cookingmood.co");
+		emailMessage.setSubject("İletişim Formu");
+
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Ad-Soyad: ");
+		stringBuilder.append(name);
+		stringBuilder.append("\n\n");
+
+		stringBuilder.append("E-posta: ");
+		stringBuilder.append(email);
+		stringBuilder.append("\n\n");
+
+		stringBuilder.append("Mesaj: ");
+		stringBuilder.append(message);
+		stringBuilder.append("\n\n");
+
+		emailMessage.setText(stringBuilder.toString());
+		mailSender.send(emailMessage);
 		return new HashMap<>();
 	}
 

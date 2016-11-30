@@ -37,7 +37,6 @@ jQuery(function() {
 				var width = jQuery(window).width();
 				console.log(width);
 				if (width <= 1025) {
-					jQuery("#mainnav").hide();
 					jQuery('#mainnav').addClass('mobilemenu');
 				} else {
 					jQuery("#mainnav").show();

@@ -35,8 +35,8 @@
 									th:text="${type.title}"></a></li>
 							</ul></li>
 						<li><a
-							th:classappend="${#strings.contains(path,'/contact-us') ? 'active' : ''}"
-							th:href="@{/contact-us}">İLETİŞİM</a></li>
+							th:classappend="${#strings.contains(path,'/contact-me') ? 'active' : ''}"
+							th:href="@{/contact-me}">İLETİŞİM</a></li>
 					</ul>
 				</div>
 			</div>

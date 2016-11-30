@@ -26,17 +26,18 @@
 					<ul class="slides">
 						<li th:each="headerImagePath : ${headerImagePaths}">
 							<div class="entry-cover"
-								th:attr="style=${'background-image: url(' + webdavBase + '' + headerImagePath + ');'}">
+								th:attr="style=${'background-image: url(' + webdavBase + '' + headerImagePath + '), linear-gradient(to right, rgba(255,255,255,1), rgba(50,50,50,1), rgba(255,255,255,1));'}">
 								<a href="javascript:void(0)" class="like-it"
 									th:attr="data-entitybaseid=${entityBaseId}"><i
-									class="fa fa-heart-o"></i></a><a href="" class="all"></a>
+									class="fa fa-heart-o"></i></a><a href="javascript:void(0)"
+									class="all"></a>
 							</div>
 						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-
 			<div
 				class="large-9 medium-12 small-12 large-centered columns blog-text text-justify">
 				<div th:remove="tag" th:utext="${blogDetail?.text}"></div>

@@ -10,8 +10,7 @@
 		<!-- END header -->
 		<section id="header-content">
 			<h1 class="wow fadeInDown">CookingMood Blog</h1>
-			<h6 class="big fontsans">EN İYİ TARİFLER, EN GÜZEL MEKANLAR
-				dishes</h6>
+			<h6 class="big fontsans">EN İYİ TARİFLER, EN GÜZEL MEKANLAR</h6>
 			<form id="findRecipe" name="findRecipe">
 				<div class="row collapse">
 					<div class="large-10 medium-10 small-8 columns">
@@ -21,6 +20,9 @@
 					<div class="large-2 medium-2 small-4 columns">
 						<input type="submit" value="">
 					</div>
+				</div>
+				<div class="large-10 medium-10 small-8 columns hide">
+					<span class="error">lütfen form alanlarını kontrol ediniz</span>
 				</div>
 			</form>
 			<script type="text/javascript" th:inline="javascript">

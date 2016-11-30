@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="tr">
 <head
-	th:include="fragments/site/headFragment :: headFragment (pageTitle=${blogDetail?.header} + '- CookingMood', pageKeywords=${blogDetail?.tags})">
+	th:include="fragments/site/headFragment :: headFragment (pageTitle='Hakkımızda - CookingMood', pageKeywords='CookingMood, cooking, mood, cookingmood, cooking-mood, hakkımızda')">
 </head>
 <body>
 	<!-- header -->

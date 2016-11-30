@@ -26,12 +26,14 @@
 					<ul class="slides">
 						<li th:each="headerImagePath : ${headerImagePaths}">
 							<div class="entry-cover"
-								th:attr="style=${'background-image: url(' + webdavBase + '' + headerImagePath + ');'}">
+								th:attr="style=${'background-image: url(' + webdavBase + '' + headerImagePath + '), linear-gradient(to right, rgba(255,255,255,1), rgba(50,50,50,1), rgba(255,255,255,1));'}">
 								<a href="javascript:void(0)" class="like-it"
 									th:attr="data-entitybaseid=${entityBaseId}"><i
-									class="fa fa-heart-o"></i></a><a href="" class="all"></a>
+									class="fa fa-heart-o"></i></a><a href="javascript:void(0)"
+									class="all"></a>
 							</div>
 						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -64,11 +66,12 @@
 				<h5 class="fontsans">Reçete:</h5>
 				<div th:remove="tag" th:utext="${recipeDetail?.recipe}"></div>
 				<ul
-					class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 clearing-thumbs wow flipInX"
+					class="small-block-grid-6 medium-block-grid-6 large-block-grid-6 clearing-thumbs wow flipInX"
 					data-clearing data-wow-offset="350">
 					<li th:each="recipeImagePath : ${recipeImagePaths}"><a
-						th:href="@{${webdavBase + recipeImagePath}}" target="_blank"><img
-							th:src="@{${webdavBase + recipeImagePath}}"></a></li>
+						th:href="@{${webdavBase + recipeImagePath}}" target="_blank">
+							<img th:src="@{${webdavBase + recipeImagePath}}" />
+					</a></li>
 				</ul>
 
 				<ul class="soc">
