@@ -565,7 +565,7 @@ p.data {
 	right: 0;
 	bottom: 0;
 	display: block;
-	background: rgba(100, 96, 102, 0.4);
+	background: rgba(100, 96, 102, 0.1);
 	z-index: 5;
 }
 

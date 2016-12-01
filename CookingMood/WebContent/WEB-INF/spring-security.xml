@@ -13,7 +13,11 @@
 		<logout logout-url="/sign-out" logout-success-url="/sign-in?logout" />
 		<!-- enable csrf protection -->
 		<csrf />
-
+		<headers defaults-disabled="true">
+			<cache-control disabled="true" />
+			<frame-options policy="SAMEORIGIN" />
+			<hsts disabled="true" />
+		</headers>
 	</http>
 
 	<authentication-manager>

@@ -31,10 +31,10 @@
 						<input type="submit" id="submit" value="Mesaj gönder">
 					</div>
 					<div class="resultArea hide text-center">
-						<h3>
+						<h5 class="fontsans">
 							<i class="fa fa-check-square" aria-hidden="true"></i> Mesajınız
 							başarıyla iletildi
-						</h3>
+						</h5>
 					</div>
 				</form>
 				<script type="text/javascript" th:inline="javascript">
@@ -95,13 +95,13 @@
 			<div class="large-3 medium-12 small-12 columns text-right">
 				<p>
 					<strong>Mail:</strong><br> <a class="pink"
-						href="mailto:info@cookingmood.co">info[at]cookingmood.co</a>
+						href="mailto:info@cookingmood.co">info@cookingmood.co</a>
 				</p>
 				<p>
 					<strong>Takip et</strong><br> <a
-						href="https://facebook.com/cookingmoods/" target="_blank">facebook</a><br>
-					<a href="https://www.instagram.com/cookingmood/" target="_blank">instagram</a><br>
-					<a href="https://tr.pinterest.com/erdayca/" target="_blank">pinterest</a>
+						href="https://facebook.com/cookingmoods/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a><br>
+					<a href="https://www.instagram.com/cookingmood/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> instagram</a><br>
+					<a href="https://tr.pinterest.com/erdayca/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i> pinterest</a>
 				</p>
 
 
