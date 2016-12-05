@@ -61,7 +61,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="large-8 medium-8 small-12 blog-text columns">
+			<div class="large-8 medium-8 small-12 blog-text columns recipe-detail">
 				<div th:remove="tag" th:utext="${recipeDetail?.entrance}"></div>
 				<h5 class="fontsans">Reçete:</h5>
 				<div th:remove="tag" th:utext="${recipeDetail?.recipe}"></div>

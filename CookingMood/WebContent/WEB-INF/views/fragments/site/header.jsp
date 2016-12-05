@@ -7,7 +7,7 @@
 		<nav class="wow fadeInDown" th:fragment="header-inner">
 			<div class="row">
 				<div class="large-3 medium-12 small-12 columns">
-					<a th:href="@{/}" class="logo">CookingMood</a>
+					<a th:href="@{/}" class="logo">cookingmood</a>
 				</div>
 				<div class="large-9 medium-12 small-12 columns">
 					<span id="showmobilemenu" class="hide-for-large-up">MENÜ</span>

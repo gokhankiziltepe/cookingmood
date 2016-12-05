@@ -67,7 +67,8 @@ public class SiteController {
 	}
 
 	@RequestMapping(value = "/recipe", method = RequestMethod.GET)
-	public ModelAndView recipes(@RequestParam(name = "searchText", required = false) String searchText) {
+	public ModelAndView recipes(@RequestParam(name = "searchText", required = false) String searchText)
+			throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
 		List<RecipeEntry> activeRecipes = new ArrayList<>();
 		if (StringUtils.isEmpty(searchText)) {
@@ -78,11 +79,26 @@ public class SiteController {
 		if (!CollectionUtils.isEmpty(activeRecipes)) {
 			modelMap.put("recipes", activeRecipes);
 			Map<Long, Object> likeMap = new HashMap<>();
+			Map<Long, String> imageMap = new HashMap<>();
 			for (RecipeEntry item : activeRecipes) {
 				int countByLikedEntity = feedbackLikeService.countByLikedEntity(item.getId());
 				likeMap.put(item.getId(), countByLikedEntity);
+
+				Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
+				String url = webdavPath + "/images/main/" + item.getId();
+				if (sardine.exists(url)) {
+					List<DavResource> resources = sardine.list(url);
+					for (DavResource res : resources) {
+						String path = res.getPath();
+						if (CookingMoodUtils.isValidResourcePath(path)) {
+							imageMap.put(item.getId(), res.getHref().getPath());
+							break;
+						}
+					}
+				}
 			}
 			modelMap.put("likeMap", likeMap);
+			modelMap.put("imageMap", imageMap);
 		}
 		return new ModelAndView("recipes", modelMap);
 	}
@@ -97,44 +113,63 @@ public class SiteController {
 		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(id);
 		modelMap.put("comments", comments);
 
-		Sardine sardine = SardineFactory.begin("test", "test");
+		Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
 
-		List<String> headerImagePaths = new ArrayList<>();
-		List<DavResource> resources = sardine
-				.list(webdavPath + "/images/recipe/" + recipeEntry.getWebdavPath() + "/header");
-		for (DavResource res : resources) {
-			String path = res.getPath();
-			if (CookingMoodUtils.isValidResourcePath(path)) {
-				headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+		String url = webdavPath + "/images/header/" + recipeEntry.getId();
+		if (sardine.exists(url)) {
+			List<String> headerImagePaths = new ArrayList<>();
+			List<DavResource> resources = sardine.list(url);
+			for (DavResource res : resources) {
+				String path = res.getPath();
+				if (CookingMoodUtils.isValidResourcePath(path)) {
+					headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+				}
 			}
+			modelMap.put("headerImagePaths", headerImagePaths);
 		}
-		modelMap.put("headerImagePaths", headerImagePaths);
-
-		List<String> recipeImagePaths = new ArrayList<>();
-		resources = sardine.list(webdavPath + "/images/recipe/" + recipeEntry.getWebdavPath() + "/recipe");
-		for (DavResource res : resources) {
-			String path = res.getPath();
-			if (CookingMoodUtils.isValidResourcePath(path)) {
-				recipeImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+		url = webdavPath + "/images/recipe/" + recipeEntry.getId();
+		if (sardine.exists(url)) {
+			List<String> recipeImagePaths = new ArrayList<>();
+			List<DavResource> resources = sardine.list(url);
+			for (DavResource res : resources) {
+				String path = res.getPath();
+				if (CookingMoodUtils.isValidResourcePath(path)) {
+					recipeImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+				}
 			}
+			modelMap.put("recipeImagePaths", recipeImagePaths);
 		}
-		modelMap.put("recipeImagePaths", recipeImagePaths);
 		return new ModelAndView("recipe-detail", modelMap);
 	}
 
 	@RequestMapping(value = "/blog", method = RequestMethod.GET)
-	public ModelAndView blogs() {
+	public ModelAndView blogs() throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
 		List<BlogEntry> activeBlogs = blogEntryService.findAllActives();
 
 		if (!CollectionUtils.isEmpty(activeBlogs)) {
 			modelMap.put("blogs", activeBlogs);
 			Map<Long, Object> likeMap = new HashMap<>();
+			Map<Long, String> imageMap = new HashMap<>();
 			for (BlogEntry item : activeBlogs) {
 				int countByLikedEntity = feedbackLikeService.countByLikedEntity(item.getId());
 				likeMap.put(item.getId(), countByLikedEntity);
+
+				Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
+				String url = webdavPath + "/images/main/" + item.getId();
+				if (sardine.exists(url)) {
+					List<DavResource> resources = sardine.list(url);
+					for (DavResource res : resources) {
+						String path = res.getPath();
+						if (CookingMoodUtils.isValidResourcePath(path)) {
+							imageMap.put(item.getId(), res.getHref().getPath());
+							break;
+						}
+					}
+				}
 			}
 			modelMap.put("likeMap", likeMap);
+			modelMap.put("imageMap", imageMap);
 		}
 		return new ModelAndView("blogs", modelMap);
 	}
@@ -149,28 +184,21 @@ public class SiteController {
 		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(id);
 		modelMap.put("comments", comments);
 
-		Sardine sardine = SardineFactory.begin("test", "test");
+		Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
 
-		List<String> headerImagePaths = new ArrayList<>();
-		List<DavResource> resources = sardine
-				.list(webdavPath + "/images/blog/" + blogEntry.getWebdavPath() + "/header");
-		for (DavResource res : resources) {
-			String path = res.getPath();
-			if (CookingMoodUtils.isValidResourcePath(path)) {
-				headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+		String url = webdavPath + "/images/header/" + blogEntry.getId();
+		if (sardine.exists(url)) {
+			List<String> headerImagePaths = new ArrayList<>();
+			List<DavResource> resources = sardine.list(url);
+			for (DavResource res : resources) {
+				String path = res.getPath();
+				if (CookingMoodUtils.isValidResourcePath(path)) {
+					headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
+				}
 			}
+			modelMap.put("headerImagePaths", headerImagePaths);
 		}
-		modelMap.put("headerImagePaths", headerImagePaths);
 
-		List<String> blogImagePaths = new ArrayList<>();
-		resources = sardine.list(webdavPath + "/images/blog/" + blogEntry.getWebdavPath() + "/blog");
-		for (DavResource res : resources) {
-			String path = res.getPath();
-			if (CookingMoodUtils.isValidResourcePath(path)) {
-				blogImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
-			}
-		}
-		modelMap.put("blogImagePaths", blogImagePaths);
 		return new ModelAndView("blog-detail", modelMap);
 	}
 

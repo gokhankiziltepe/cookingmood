@@ -32,7 +32,8 @@
 							class="fa fa-heart-o"></i>&nbsp;<span
 							th:text="${likeMap[item.id]}"></span></a><a class="entry-link"
 							th:href="@{'blog/' + ${item.id}}"></a><img
-							th:src="@{${webdavBase} + '/images/blog/' + ${item.webdavPath} + '/main/1.jpg'}" />
+							style="margin: 0 auto;"
+							th:src="@{${webdavBase} + ${imageMap[item.id]}}" />
 					</div>
 					<div class="entry-name">
 						<p class="data"

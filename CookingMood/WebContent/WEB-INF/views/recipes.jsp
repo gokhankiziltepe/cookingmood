@@ -34,7 +34,8 @@
 							<a th:href="@{'recipe/' + ${item.id}}" class="type"
 								th:text="${item.recipeType.title}"></a> <a class="recipe-link"
 								th:href="@{'recipe/' + ${item.id}}"></a> <img
-								th:src="@{${webdavBase} + '/images/recipe/' + ${item.webdavPath} + '/main/1.jpg'}">
+								style="margin: 0 auto;"
+								th:src="@{${webdavBase} + ${imageMap[item.id]}}">
 						</div>
 						<h6 class="fontsans margin0">
 							<a th:href="@{'recipe/' + ${item.id}}" th:text="${item.header}"></a>

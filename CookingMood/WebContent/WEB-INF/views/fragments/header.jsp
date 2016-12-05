@@ -12,13 +12,13 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="@{/admin}">cookingmood</a>
+				<a class="navbar-brand" th:href="@{/admin}">cookingmood</a>
 			</div>
 			<div class="navbar-collapse collapse"
 				th:if="${#authorization.expression('isAuthenticated()')}">
 				<ul class="nav navbar-nav">
-					<li><a href="#" th:href="@{/admin/recipe-entry}">tarif ekle</a></li>
-					<li><a href="#" th:href="@{/admin/blog-entry}">blog ekle</a></li>
+					<li><a th:href="@{/admin/recipe-entry}">tarif ekle</a></li>
+					<li><a th:href="@{/admin/blog-entry}">blog ekle</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="javascript: document.logoutForm.submit()"

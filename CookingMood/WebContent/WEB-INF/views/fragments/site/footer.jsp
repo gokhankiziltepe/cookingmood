@@ -8,7 +8,7 @@
 		<div id="footer-top">
 			<div class="row">
 				<div class="large-4 medium-4 small-12 columns">
-					<h4>Instgram - CookingMood</h4>
+					<h4 style="font-size: 1.5em;">instagram - cookingmood</h4>
 					<blockquote class="instagram-media" data-instgrm-captioned
 						data-instgrm-version="7"
 						style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 1px; max-width: 658px; padding: 0; width: 99.375%; width: -webkit-calc(100% - 2px); width: calc(100% - 2px);">
@@ -38,7 +38,7 @@
 					<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
 				</div>
 				<div class="large-4 medium-4 small-12 columns">
-					<h4>&nbsp;</h4>
+					<h4 style="font-size: 1.5em;">&nbsp;</h4>
 					<blockquote class="instagram-media" data-instgrm-captioned
 						data-instgrm-version="7"
 						style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 1px; max-width: 658px; padding: 0; width: 99.375%; width: -webkit-calc(100% - 2px); width: calc(100% - 2px);">
@@ -68,7 +68,7 @@
 					<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
 				</div>
 				<div class="large-4 medium-4 small-12 columns">
-					<h4>&nbsp;</h4>
+					<h4 style="font-size: 1.5em;">&nbsp;</h4>
 					<blockquote class="instagram-media" data-instgrm-captioned
 						data-instgrm-version="7"
 						style="background: #FFF; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15); margin: 1px; max-width: 658px; padding: 0; width: 99.375%; width: -webkit-calc(100% - 2px); width: calc(100% - 2px);">
@@ -103,7 +103,7 @@
 		<div id="footer-bottom">
 			<div class="row">
 				<div class="large-3 medium-12 small-12 columns">
-					<a href="index.html" class="logo">CookingMood</a>
+					<a href="index.html" class="logo">cookingmood</a>
 				</div>
 				<div class="large-9 medium-12 small-12 columns">
 					<ul>

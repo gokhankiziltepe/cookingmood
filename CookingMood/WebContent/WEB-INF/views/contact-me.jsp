@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h2 class="margin0">İletişime geçin</h2>
+					<h3 class="margin0">iletişime geçin</h3>
 				</div>
 			</div>
 		</div>
@@ -94,14 +94,21 @@
 			</div>
 			<div class="large-3 medium-12 small-12 columns text-right">
 				<p>
-					<strong>Mail:</strong><br> <a class="pink"
-						href="mailto:info@cookingmood.co">info@cookingmood.co</a>
+					<strong>Mail</strong><br> <a class="pink"
+						href="mailto:info@cookingmood.co"><i class="fa fa-envelope"
+						aria-hidden="true"></i> info@cookingmood.co</a>
 				</p>
 				<p>
 					<strong>Takip et</strong><br> <a
-						href="https://facebook.com/cookingmoods/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a><br>
-					<a href="https://www.instagram.com/cookingmood/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> instagram</a><br>
-					<a href="https://tr.pinterest.com/erdayca/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i> pinterest</a>
+						href="https://facebook.com/cookingmoods/" target="_blank"> <i
+						class="fa fa-facebook" style="color: #3B5998;" aria-hidden="true"></i>
+						facebook
+					</a> <br> <a href="https://www.instagram.com/cookingmood/"
+						target="_blank"> <i class="fa fa-instagram"
+						style="color: #f77737;" aria-hidden="true"></i> instagram
+					</a> <br> <a href="https://tr.pinterest.com/erdayca/"
+						target="_blank"><i class="fa fa-pinterest"
+						style="color: #bd081c;" aria-hidden="true"></i> pinterest </a>
 				</p>
 
 

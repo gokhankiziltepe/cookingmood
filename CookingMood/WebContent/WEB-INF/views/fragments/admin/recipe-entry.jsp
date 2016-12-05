@@ -73,6 +73,7 @@
 						</div>
 						<button type="submit" class="btn btn-default">gönder</button>
 					</form>
+					
 					<script type="text/javascript">
 						$(function() {
 							CKEDITOR.replace('recipeTool');

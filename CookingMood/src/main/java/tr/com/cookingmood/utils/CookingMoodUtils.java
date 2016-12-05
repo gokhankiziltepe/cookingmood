@@ -15,7 +15,7 @@ public class CookingMoodUtils {
 
 	public static boolean isValidResourcePath(String text) {
 		return StringUtils.endsWithIgnoreCase(text, ".jpeg") || StringUtils.endsWithIgnoreCase(text, ".jpg")
-				|| StringUtils.endsWithIgnoreCase(text, ".png");
+				|| StringUtils.endsWithIgnoreCase(text, ".png") || StringUtils.endsWithIgnoreCase(text, ".gif");
 	}
 
 	public static String getWebdavResourcePath(String text) {

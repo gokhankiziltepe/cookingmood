@@ -19,6 +19,9 @@
 	url("http://fonts.googleapis.com/css?family=Grand+Hotel&subset=latin,latin-ext")
 	;
 
+@import
+	url("https://fonts.googleapis.com/css?family=Ubuntu|Amatic+SC")
+	;
 /* -------------------------------
 	Awesome Font
 ------------------------------------*/
@@ -55,25 +58,25 @@
 }
 
 body {
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	overflow-x: hidden;
 }
 
 p, li, td, input, label {
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 17px;
 	font-weight: 300;
 }
 
 .blog-text p, .blog-text li, .blog-text td, .blog-text input, .blog-text label
 	{
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 22px;
 	font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Grand Hotel', cursive;
+	font-family: 'Amatic SC', cursive;
 	margin: 0 0 1.25rem 0;
 	font-weight: 400;
 	line-height: normal;
@@ -104,12 +107,12 @@ h6 {
 }
 
 .fontsans {
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: 400;
 }
 
 .button, button {
-	font-family: 'Grand Hotel', cursive;
+	font-family: 'Amatic SC', cursive;
 	font-size: 1.4em;
 	background: none;
 	border: 2px solid #3c393d;
@@ -259,7 +262,7 @@ a:hover {
 
 #header .logo, #footer-bottom .logo {
 	color: rgba(255, 255, 255, 1);
-	font-family: 'Grand Hotel', cursive;
+	font-family: 'Amatic SC', cursive;
 	font-size: 25px;
 	line-height: 6rem;
 	display: block;
@@ -304,7 +307,7 @@ form#findRecipe input[type="text"] {
 	margin: 0px;
 	border: 0px;
 	box-shadow: none;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -424,7 +427,7 @@ form#findRecipe input[type="submit"] {
 .recipe-cover a.type {
 	bottom: 10px;
 	right: 10px;
-	font-family: 'Grand Hotel', cursive;
+	font-family: 'Amatic SC', cursive;
 	font-size: 23px;
 	-webkit-transition: none;
 	-moz-transition: none;
@@ -759,7 +762,7 @@ textarea {
 	min-height: 220px;
 	border: 1px solid rgba(0, 0, 0, 0.06);
 	box-shadow: none;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"],
@@ -771,7 +774,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	height: auto;
 	border: 1px solid rgba(0, 0, 0, 0.06);
 	box-shadow: none;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus,
@@ -791,7 +794,7 @@ input[type="submit"] {
 	box-shadow: none;
 	width: 100%;
 	background-color: #ffffff;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
 	cursor: pointer;
 }
@@ -822,7 +825,7 @@ input[type="submit"]:hover {
 .filters a {
 	background: #f5f5f5;
 	padding: 6px 12px;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	margin: 1rem 0.4rem;
 	display: inline-block;
 	font-size: 1.1rem;

@@ -9,8 +9,7 @@
 		<div th:replace="fragments/site/header :: header-inner"></div>
 		<!-- END header -->
 		<section id="header-content">
-			<h1 class="wow fadeInDown">CookingMood Blog</h1>
-			<h6 class="big fontsans">EN İYİ TARİFLER, EN GÜZEL MEKANLAR</h6>
+			<h1 class="wow fadeInDown">cookingmood</h1>
 			<form id="findRecipe" name="findRecipe">
 				<div class="row collapse">
 					<div class="large-10 medium-10 small-8 columns">
@@ -58,6 +57,7 @@
 				});
 			</script>
 		</section>
+		
 		<section class="fullwidth">
 			<div class="row collapse" data-equalizer>
 				<div class="large-6 medium-6 small-12 columns">

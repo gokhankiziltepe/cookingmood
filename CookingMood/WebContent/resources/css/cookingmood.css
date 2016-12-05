@@ -29,3 +29,23 @@ div.loader {
 ul {
 	list-style: none;
 }
+
+#searchText::-webkit-input-placeholder {
+	font-family: 'Amatic SC', Arial, Helvetica, sans-serif;
+}
+
+#searchText:-ms-input-placeholder {
+	font-family: 'Amatic SC', Arial, Helvetica, sans-serif;
+}
+
+#searchText:-moz-placeholder {
+	font-family: 'Amatic SC', Arial, Helvetica, sans-serif;
+}
+
+#searchText::-moz-placeholder {
+	font-family: 'Amatic SC', Arial, Helvetica, sans-serif;
+}
+
+.recipe-detail ul {
+	list-style: disc;
+}
