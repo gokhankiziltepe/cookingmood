@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h3 class="margin0">iletişime geçin</h3>
+					<h3 class="margin0">İLETİŞİME GEÇİN</h3>
 				</div>
 			</div>
 		</div>

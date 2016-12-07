@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h2 class="margin0">Pişirmeden</h2>
+					<h2 class="margin0">PİŞİRMEDEN</h2>
 				</div>
 			</div>
 		</div>
@@ -59,162 +59,101 @@
 		</section>
 	</section>
 
-	<!-- 	<section class="content-padding"> -->
-	<!-- 		<div class="row"> -->
-	<!-- 			<div class="large-12 medium-12 small-12 columns"> -->
-	<!-- 				<div class="head align-center"> -->
-	<!-- 					<h2 class="margin0">Some facts of my life</h2> -->
-	<!-- 				</div> -->
-	<!-- 				<section id="cd-timeline" class="cd-container"> -->
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-picture"> -->
-	<!-- 							<i class="fa fa-picture-o"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
+	<section class="content-padding">
+		<div class="row">
+			<div class="large-12 medium-12 small-12 columns">
+				<div class="head align-center">
+					<h2 class="margin0">Nereden Nereye?</h2>
+				</div>
+				<section id="cd-timeline" class="cd-container">
+					<div class="cd-timeline-block">
+						<div class="cd-timeline-img cd-picture">
+							<i class="fa fa-picture-o"></i>
+						</div>
+						<div class="cd-timeline-content">
+							<h4 class="fontsans">İlk tatlı, Pişirmeden</h4>
+							<span class="cd-date">Yaz 06</span>
+						</div>
+					</div>
+					<div class="cd-timeline-block">
+						<div class="cd-timeline-img cd-picture">
+							<i class="fa fa-picture-o"></i>
+						</div>
+						<div class="cd-timeline-content">
+							<h4 class="fontsans">İlk mutfak eğitimi, Meze ve
+								zeytinyağlılar</h4>
+							<span class="cd-date">2011</span>
+						</div>
+					</div>
+					<div class="cd-timeline-block">
+						<div class="cd-timeline-img cd-picture">
+							<i class="fa fa-picture-o"></i>
+						</div>
+						<div class="cd-timeline-content">
+							<h4 class="fontsans">İlk cheesecake</h4>
+							<div class="cover">
+								<img src="resources/img/food1.jpg">
+							</div>
+							<p>Yediğim ilk cheesecake yaptığım cheesecake oldu. 2012'de
+								ilk aşçılık kursumu aldığım zamanlarda hep meze yapıyoruz bir de
+								cheesecake deneyelim dediğimiz zaman, arkadaşım bize cheesecake
+								yapmayı öğretti. Ve o gün eve dönüşümde kelepçeli kalıbımı
+								aldım, sonuç ise ortada :) Şekline bakmayın tadı hala damağımda.
+							</p>
+							<span class="cd-date">Ağu 12</span>
+						</div>
+					</div>
+					<div class="cd-timeline-block">
+						<div class="cd-timeline-img cd-movie">
+							<i class="fa fa-paint-brush"></i>
+						</div>
 
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food1.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
+						<div class="cd-timeline-content">
+							<h4 class="fontsans">Patisserie A La Carte Paris, Fransız
+								Pastaları</h4>
+							<div class="cover">
+								<img src="resources/img/food3.png">
+							</div>
+							<p>Hayaller gerçek oldu. Uzmanlaşmak istediğim alanlardan
+								biri olan french patisserie’nin Fransa’da kısa da olsa eğitimini
+								alacaktım. Yağmurlu, soğuk ama yağmurun ve soğuğun mutluluk ile
+								harmanlanmış vücuduma etki edemediği günlerdi. Patisserie a la
+								carte - Paris, seni unutmayacağım. 4 gün boyunca sadece tatlı
+								tadarak beslendiğim Paris günlerimi de. Tekrarını her sene
+								umarız.</p>
+							<span class="cd-date">Eki 15</span>
+						</div>
+					</div>
+					<div class="cd-timeline-block">
+						<div class="cd-timeline-img cd-picture">
+							<i class="fa fa-laptop"></i>
+						</div>
+						<div class="cd-timeline-content">
+							<h4 class="fontsans">Mutfakta 8 Hafta, Pastacılık, MSA</h4>
+							<div class="cover">
+								<img src="resources/img/food5.png">
+							</div>
+							<p>MSA, hafta içi pasta yapamıyor olmak can sıkmaya başladığı
+								anda girdi hayatıma esasen. 8 Hafta cumartesileri kekli
+								kurabiyeli pastalı şerbetli tatlılı, güzellik oldu geçti. 8
+								hafta süre gelirken hafta içi de boş durmadım tabii ki, 1 günlük
+								artisan çikolata 1 gün ev yapımı İtalyan makarnaları eğitimi.
+								Hayat mutfakta çok güzel.</p>
 
-	<!-- 							<span class="cd-date">Jan 14</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-movie"> -->
-	<!-- 							<i class="fa fa-paint-brush"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
-
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food2.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
-
-	<!-- 							<span class="cd-date">Jan 18</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-picture"> -->
-	<!-- 							<i class="fa fa-laptop"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
-
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food3.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
-
-	<!-- 							<span class="cd-date">Jan 24</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-location"> -->
-	<!-- 							<i class="fa fa-share-alt-square"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
-
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food4.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
-
-	<!-- 							<span class="cd-date">Feb 14</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-location"> -->
-	<!-- 							<i class="fa fa-life-ring"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
-
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food5.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
-
-	<!-- 							<span class="cd-date">Feb 18</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-
-	<!-- 					<div class="cd-timeline-block"> -->
-	<!-- 						<div class="cd-timeline-img cd-movie"> -->
-	<!-- 							<i class="fa fa-tags"></i> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-img -->
-
-	<!-- 						<div class="cd-timeline-content"> -->
-	<!-- 							<h4 class="fontsans">My first own dish</h4> -->
-	<!-- 							<div class="cover"> -->
-	<!-- 								<img src="img/food6.jpg"> -->
-	<!-- 							</div> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. -->
-	<!-- 								Iusto, optio, dolorum provident rerum aut hic quasi placeat iure -->
-	<!-- 								tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus -->
-	<!-- 								veritatis qui ut. Tempora laudantium ipsa ad debitis unde? Iste -->
-	<!-- 								voluptatibus minus veritatis qui ut.</p> -->
-
-	<!-- 							<span class="cd-date">Feb 26</span> -->
-	<!-- 						</div> -->
-	<!-- 						cd-timeline-content -->
-	<!-- 					</div> -->
-	<!-- 					cd-timeline-block -->
-	<!-- 				</section> -->
-	<!-- 				cd-timeline -->
-	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 		<div class="row collapse"> -->
-	<!-- 			<div class="large-12 mecoim-12 small-12 columns text-center"> -->
-	<!-- 				<div class="all"> -->
-	<!-- 					<a href="" class="button dark">Load more...</a> -->
-	<!-- 				</div> -->
-	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 	</section> -->
+							<span class="cd-date">Haz 16</span>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- 		<div class="row collapse"> -->
+		<!-- 			<div class="large-12 mecoim-12 small-12 columns text-center"> -->
+		<!-- 				<div class="all"> -->
+		<!-- 					<a href="" class="button dark">Load more...</a> -->
+		<!-- 				</div> -->
+		<!-- 			</div> -->
+		<!-- 		</div> -->
+	</section>
 	<div th:replace="fragments/site/footer :: footer"></div>
 </body>
 </html>

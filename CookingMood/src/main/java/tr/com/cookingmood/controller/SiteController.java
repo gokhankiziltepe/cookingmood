@@ -91,7 +91,7 @@ public class SiteController {
 					for (DavResource res : resources) {
 						String path = res.getPath();
 						if (CookingMoodUtils.isValidResourcePath(path)) {
-							imageMap.put(item.getId(), res.getHref().getPath());
+							imageMap.put(item.getId(), CookingMoodUtils.getWebdavResourcePath(res.getHref().getPath()));
 							break;
 						}
 					}
@@ -162,7 +162,7 @@ public class SiteController {
 					for (DavResource res : resources) {
 						String path = res.getPath();
 						if (CookingMoodUtils.isValidResourcePath(path)) {
-							imageMap.put(item.getId(), res.getHref().getPath());
+							imageMap.put(item.getId(), CookingMoodUtils.getWebdavResourcePath(res.getHref().getPath()));
 							break;
 						}
 					}
