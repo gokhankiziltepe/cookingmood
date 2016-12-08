@@ -23,8 +23,10 @@ import tr.com.cookingmood.constants.BlogTypes;
 import tr.com.cookingmood.constants.RecipeDifficulties;
 import tr.com.cookingmood.constants.RecipeTypes;
 import tr.com.cookingmood.model.BlogEntry;
+import tr.com.cookingmood.model.FeedbackComment;
 import tr.com.cookingmood.model.RecipeEntry;
 import tr.com.cookingmood.service.BlogEntryService;
+import tr.com.cookingmood.service.FeedbackCommentService;
 import tr.com.cookingmood.service.RecipeEntryService;
 import tr.com.cookingmood.utils.CookingMoodUtils;
 
@@ -34,6 +36,8 @@ public class HomeController {
 	private BlogEntryService blogEntryService;
 	@Autowired
 	private RecipeEntryService recipeEntryService;
+	@Autowired
+	private FeedbackCommentService feedbackCommentService;
 
 	@Value("${webdav.path}")
 	private String webdavPath;
@@ -96,6 +100,14 @@ public class HomeController {
 			modelMap.put("headerImagePaths", headerImagePaths);
 		}
 		return new ModelAndView("recipe-entry", modelMap);
+	}
+
+	@RequestMapping(value = "/admin/comment-entry", method = RequestMethod.GET)
+	public ModelAndView commentEntry(@RequestParam(value = "id", required = false) Long id) throws IOException {
+		Map<String, Object> modelMap = new HashMap<>();
+		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntityAll(id);
+		modelMap.put("comments", comments);
+		return new ModelAndView("comment-entry", modelMap);
 	}
 
 	@RequestMapping(value = "/admin/image-entry", method = RequestMethod.GET)

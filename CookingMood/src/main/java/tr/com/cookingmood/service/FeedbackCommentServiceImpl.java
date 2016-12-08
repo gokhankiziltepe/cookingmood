@@ -23,6 +23,16 @@ public class FeedbackCommentServiceImpl implements FeedbackCommentService {
 
 	@Override
 	public List<FeedbackComment> findByLikedEntity(Long id) {
+		return repository.findByLikedEntity_IdAndActiveTrueOrderByCreateDateDesc(id);
+	}
+
+	@Override
+	public FeedbackComment findOne(Long id) {
+		return repository.findOne(id);
+	}
+
+	@Override
+	public List<FeedbackComment> findByLikedEntityAll(Long id) {
 		return repository.findByLikedEntity_IdOrderByCreateDateDesc(id);
 	}
 

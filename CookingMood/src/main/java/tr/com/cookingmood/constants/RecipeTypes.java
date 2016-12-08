@@ -2,7 +2,7 @@ package tr.com.cookingmood.constants;
 
 public enum RecipeTypes {
 	TARTLAR(1, "Tartlar"), CIKOLATALAR(2, "Çikolatalar"), KEKLER(3, "Kekler"), PASTALAR(4, "Pastalar"), SUTLU_TATLILAR(
-			5, "Sütlü Tatlılar"), KURABIYELER(6, "Kurabiyeler"), CHEESECAKELER(7, "Cheesecakeler");
+			5, "Sütlü Tatlılar"), KURABIYELER(6, "Kurabiyeler"), CHEESECAKELER(7, "Cheesecakeler"), DIGER(8, "Diğer");
 	int status;
 	String title;
 

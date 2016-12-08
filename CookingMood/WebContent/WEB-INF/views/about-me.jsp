@@ -19,7 +19,7 @@
 			<div class="row collapse" data-equalizer>
 				<div class="large-6 medium-12 small-12 columns">
 					<div class="myphoto wow bounceInLeft"
-						style="background: url(resources/images/team/team-member-1.jpg) no-repeat center center;"
+						style="background: url(resources/images/team/team-member-1.jpg) no-repeat center center; max-height: 600px !important;"
 						data-equalizer-watch data-wow-offset="350">
 						<a href=""></a>
 					</div>
@@ -48,11 +48,17 @@
 							ayrıntısına kadar, çaresizlik için de eksik olan şeyi söylemesini
 							beklerken. “Ayça pişirmedin mi” dedi? Ben “Tarifte yazmıyordu
 							ama” deyince bir daha cevap vermedi bana.</p>
-						<p>Evet , ilk tatlımı pişirmeden sunmaya çalıştığımdan beri
+						<p>Evet, ilk tatlımı pişirmeden sunmaya çalıştığımdan beri
 							içimde dinmek bilmeyen bir mutfak merakı var. Pasta yapmaktan ,
 							bunları tadan insanların yerken gözlerinin içine bakarak neler
 							hissettiklerini kendi içimde çözümlemeye çalışmak benim için bir
 							başlangıç yolu oldu diyebilirim.</p>
+						<p>Bu hikaye de teşekkürü borç bildiklerim var, O kişiler;
+							tatlıyı bu kadar güzel yaparak tadını damağımda bırakan Berrin
+							teyzem, tarifi eksik ileterek içimdeki mutfak merakını ortaya
+							çıkartan arkadaşım Seray ve mutfağını gözleri kapalı bana emanet
+							eden, pişmemiş haline bile güzel oldu diyen canım babaannem.
+							Sevgilerimle, Ayça</p>
 					</div>
 				</div>
 			</div>
@@ -71,26 +77,7 @@
 							<i class="fa fa-picture-o"></i>
 						</div>
 						<div class="cd-timeline-content">
-							<h4 class="fontsans">İlk tatlı, Pişirmeden</h4>
-							<span class="cd-date">Yaz 06</span>
-						</div>
-					</div>
-					<div class="cd-timeline-block">
-						<div class="cd-timeline-img cd-picture">
-							<i class="fa fa-picture-o"></i>
-						</div>
-						<div class="cd-timeline-content">
-							<h4 class="fontsans">İlk mutfak eğitimi, Meze ve
-								zeytinyağlılar</h4>
-							<span class="cd-date">2011</span>
-						</div>
-					</div>
-					<div class="cd-timeline-block">
-						<div class="cd-timeline-img cd-picture">
-							<i class="fa fa-picture-o"></i>
-						</div>
-						<div class="cd-timeline-content">
-							<h4 class="fontsans">İlk cheesecake</h4>
+							<h4 class="">İlk cheesecake</h4>
 							<div class="cover">
 								<img src="resources/img/food1.jpg">
 							</div>
@@ -109,7 +96,7 @@
 						</div>
 
 						<div class="cd-timeline-content">
-							<h4 class="fontsans">Patisserie A La Carte Paris, Fransız
+							<h4 class="">Patisserie a la Carte Paris, Fransız
 								Pastaları</h4>
 							<div class="cover">
 								<img src="resources/img/food3.png">
@@ -129,7 +116,7 @@
 							<i class="fa fa-laptop"></i>
 						</div>
 						<div class="cd-timeline-content">
-							<h4 class="fontsans">Mutfakta 8 Hafta, Pastacılık, MSA</h4>
+							<h4 class="">Mutfakta 8 Hafta, Pastacılık, MSA</h4>
 							<div class="cover">
 								<img src="resources/img/food5.png">
 							</div>
@@ -146,13 +133,6 @@
 				</section>
 			</div>
 		</div>
-		<!-- 		<div class="row collapse"> -->
-		<!-- 			<div class="large-12 mecoim-12 small-12 columns text-center"> -->
-		<!-- 				<div class="all"> -->
-		<!-- 					<a href="" class="button dark">Load more...</a> -->
-		<!-- 				</div> -->
-		<!-- 			</div> -->
-		<!-- 		</div> -->
 	</section>
 	<div th:replace="fragments/site/footer :: footer"></div>
 </body>

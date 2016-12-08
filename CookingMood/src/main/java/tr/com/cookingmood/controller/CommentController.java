@@ -80,4 +80,20 @@ public class CommentController {
 		modelMap.put("comments", comments);
 		return new ModelAndView("fragments/site/comment :: comment", modelMap);
 	}
+
+	@RequestMapping(value = "/admin/comment-entry/delete", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> deleteBlogEntry(@RequestParam("id") Long id) {
+		FeedbackComment comment = feedbackCommentService.findOne(id);
+		comment.setActive(false);
+		feedbackCommentService.save(comment);
+		return new HashMap<>();
+	}
+
+	@RequestMapping(value = "/admin/comment-entry/activate", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> activateBlogEntry(@RequestParam("id") Long id) {
+		FeedbackComment comment = feedbackCommentService.findOne(id);
+		comment.setActive(true);
+		feedbackCommentService.save(comment);
+		return new HashMap<>();
+	}
 }

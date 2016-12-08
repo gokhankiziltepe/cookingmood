@@ -30,7 +30,9 @@
 									<td th:text="${blogEntry.createDate}"></td>
 									<td th:text="${blogEntry.updateDate}"></td>
 									<td th:text="${blogEntry.version}"></td>
-									<td><a th:href="@{/admin/image-entry?id=}+${blogEntry.id}">resim
+									<td><a
+										th:href="@{/admin/comment-entry?id=}+${blogEntry.id}">yorumları
+											gör</a> | <a th:href="@{/admin/image-entry?id=}+${blogEntry.id}">resim
 											ekle</a> | <a th:href="@{/admin/blog-entry?id=}+${blogEntry.id}">güncelle</a>
 										| <a
 										th:classappend="${blogEntry.active} ? delete-blog : activate-blog"
@@ -102,7 +104,10 @@
 									<td th:text="${recipeEntry.createDate}"></td>
 									<td th:text="${recipeEntry.updateDate}"></td>
 									<td th:text="${recipeEntry.version}"></td>
-									<td><a th:href="@{/admin/image-entry?id=}+${recipeEntry.id}">resim
+									<td><a
+										th:href="@{/admin/comment-entry?id=}+${recipeEntry.id}">yorumları
+											gör</a> | <a
+										th:href="@{/admin/image-entry?id=}+${recipeEntry.id}">resim
 											ekle</a> | <a
 										th:href="@{/admin/recipe-entry?id=}+${recipeEntry.id}">güncelle</a>
 										| <a

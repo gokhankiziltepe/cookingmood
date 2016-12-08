@@ -57,12 +57,12 @@
 				});
 			</script>
 		</section>
-		
+
 		<section class="fullwidth">
 			<div class="row collapse" data-equalizer>
 				<div class="large-6 medium-6 small-12 columns">
 					<div class="myphoto wow bounceInLeft"
-						style="background: url(resources/images/team/team-member-1.jpg) no-repeat center center;"
+						style="background: url(resources/images/team/team-member-1.jpg) no-repeat center center; max-height: 600px !important;"
 						data-wow-offset="350" data-equalizer-watch>
 						<a href=""></a>
 					</div>
