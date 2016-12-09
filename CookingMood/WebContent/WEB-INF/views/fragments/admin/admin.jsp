@@ -25,7 +25,6 @@
 								<tr th:each="blogEntry: ${blogEntries}"
 									th:attr="data-blogid=${blogEntry.id}">
 									<td th:text="${blogEntry.header}"></td>
-									<td th:text="${blogEntry.webdavPath}"></td>
 									<td th:text="${blogEntry.blogType.title}"></td>
 									<td th:text="${blogEntry.createDate}"></td>
 									<td th:text="${blogEntry.updateDate}"></td>
@@ -99,7 +98,6 @@
 								<tr th:each="recipeEntry: ${recipeEntries}"
 									th:attr="data-recipeid=${recipeEntry.id}">
 									<td th:text="${recipeEntry.header}"></td>
-									<td th:text="${recipeEntry.webdavPath}"></td>
 									<td th:text="${recipeEntry.recipeType.title}"></td>
 									<td th:text="${recipeEntry.createDate}"></td>
 									<td th:text="${recipeEntry.updateDate}"></td>
@@ -137,6 +135,74 @@
 											var id = $(this).closest('tr').data('recipeid');
 											$.ajax({
 												url : 'admin/recipe-entry/activate',
+												type : 'POST',
+												data : {
+													id : id
+												},
+												error : function(error) {
+													alert(error.responseText);
+												},
+												dataType : "json",
+												success : function(data) {
+													window.location.reload();
+												},
+											});
+										});
+									});
+								</script>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-12" th:if="${not #lists.isEmpty(footerContents)}">
+					<div class="table-responsive">
+						<h2>instagram postu</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>içerik</th>
+									<th>tarih</th>
+									<th>güncelleme</th>
+									<th>versiyon</th>
+									<th>işlem</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="footerContent : ${footerContents}"
+									th:attr="data-footerid=${footerContent.id}">
+									<td th:utext="${footerContent.htmlContent}"></td>
+									<td th:text="${footerContent.createDate}"></td>
+									<td th:text="${footerContent.updateDate}"></td>
+									<td th:text="${footerContent.version}"></td>
+									<td><a
+										th:href="@{/admin/footer-content?id=}+${footerContent.id}">güncelle</a>
+										| <a
+										th:classappend="${footerContent.active} ? delete-footer : activate-footer"
+										th:text="${footerContent.active} ? 'sil' : 'aktifleştir'"></a></td>
+								</tr>
+								<script type="text/javascript">
+									$(function() {
+										$('.delete-footer').click(function() {
+											var id = $(this).closest('tr').data('footerid');
+											$.ajax({
+												url : 'admin/footer-content/delete',
+												type : 'POST',
+												data : {
+													id : id
+												},
+												error : function(error) {
+													alert(error.responseText);
+												},
+												dataType : "json",
+												success : function(data) {
+													window.location.reload();
+												},
+											});
+										});
+										$('.activate-footer').click(function() {
+											var id = $(this).closest('tr').data('footerid');
+											$.ajax({
+												url : 'admin/footer-content/activate',
 												type : 'POST',
 												data : {
 													id : id

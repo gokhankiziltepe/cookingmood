@@ -5,6 +5,7 @@
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<header id="header" th:fragment="header">
 		<div th:replace="fragments/site/header :: header-inner"></div>
 		<!-- END header -->
@@ -14,7 +15,7 @@
 				<div class="row collapse">
 					<div class="large-10 medium-10 small-8 columns">
 						<input type="text" name="searchText" maxlength="100"
-							id="searchText" placeholder="tarif bul">
+							id="searchText" placeholder="TARİF BUL">
 					</div>
 					<div class="large-2 medium-2 small-4 columns">
 						<input type="submit" value="">
@@ -72,9 +73,9 @@
 					<div class="aboutme" data-equalizer-watch>
 						<div class="head align-left">
 							<h2 class="margin0">Ayça Erdem</h2>
-							<h6 class="fontsans big">
+							<h5 class="big">
 								<strong>Pişirmeden</strong>
-							</h6>
+							</h5>
 						</div>
 						<p>Sene 2006 idi, sıcak bir yaz günü denizden çıkmış terlemiş
 							acıkmıştım. Silivri’de arkadaşlarım ile beraber geçirdiğim basit

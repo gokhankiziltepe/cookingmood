@@ -5,6 +5,7 @@
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
 	<section class="content-padding">
@@ -53,9 +54,9 @@
 							bunları tadan insanların yerken gözlerinin içine bakarak neler
 							hissettiklerini kendi içimde çözümlemeye çalışmak benim için bir
 							başlangıç yolu oldu diyebilirim.</p>
-						<p>Bu hikaye de teşekkürü borç bildiklerim var, O kişiler;
+						<p>Bu hikayede teşekkürü borç bildiklerim var, o kişiler;
 							tatlıyı bu kadar güzel yaparak tadını damağımda bırakan Berrin
-							teyzem, tarifi eksik ileterek içimdeki mutfak merakını ortaya
+							Teyzem, tarifi eksik ileterek içimdeki mutfak merakını ortaya
 							çıkartan arkadaşım Seray ve mutfağını gözleri kapalı bana emanet
 							eden, pişmemiş haline bile güzel oldu diyen canım babaannem.
 							Sevgilerimle, Ayça</p>

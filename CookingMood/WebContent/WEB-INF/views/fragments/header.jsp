@@ -19,6 +19,7 @@
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/admin/recipe-entry}">tarif ekle</a></li>
 					<li><a th:href="@{/admin/blog-entry}">blog ekle</a></li>
+					<li><a th:href="@{/admin/footer-content}">instagram post ekle</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="javascript: document.logoutForm.submit()"

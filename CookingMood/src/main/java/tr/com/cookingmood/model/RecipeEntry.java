@@ -90,10 +90,6 @@ public class RecipeEntry extends EntityBase {
 		this.recipeType = recipeType;
 	}
 
-	public String getWebdavPath() {
-		return CookingMoodUtils.getWebdavPath(this.header);
-	}
-
 	public String getTags() {
 		return tags;
 	}

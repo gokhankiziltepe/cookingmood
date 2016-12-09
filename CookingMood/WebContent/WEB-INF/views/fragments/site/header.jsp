@@ -4,6 +4,12 @@
 </head>
 <body>
 	<header id="header" th:fragment="header">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPVWTTQ"
+				height="0" width="0" style="display: none; visibility: hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<nav class="wow fadeInDown" th:fragment="header-inner">
 			<div class="row">
 				<div class="large-3 medium-12 small-12 columns">

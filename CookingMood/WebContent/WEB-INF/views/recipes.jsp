@@ -5,13 +5,14 @@
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
 	<section class="content-padding">
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h2 class="margin0">Tarifler</h2>
+					<h2 class="margin0">TARİFLER</h2>
 					<div class="filters text-center">
 						<a data-target='item'>Tümü</a> <a th:each="item : ${recipeTypes}"
 							th:attrappend="data-target=${'category-' + item.status}"
@@ -37,9 +38,9 @@
 								style="margin: 0 auto;"
 								th:src="@{${webdavBase} + ${imageMap[item.id]}}">
 						</div>
-						<h6 class="fontsans margin0">
+						<h5 class="margin0 big">
 							<a th:href="@{'recipe/' + ${item.id}}" th:text="${item.header}"></a>
-						</h6>
+						</h5>
 					</div>
 				</div>
 			</div>

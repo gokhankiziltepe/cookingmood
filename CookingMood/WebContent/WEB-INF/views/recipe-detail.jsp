@@ -5,6 +5,7 @@
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
 	<section class="content-padding">
@@ -12,7 +13,7 @@
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h3 class="margin0 fontsans">
+					<h3 class="margin0 big">
 						<span th:text="${recipeDetail?.header}"></span>
 					</h3>
 				</div>

@@ -51,23 +51,23 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
-	<bean id="hibernateSessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan">
-			<list>
-				<value>tr.com.cookingmood</value>
-			</list>
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
-				<prop key="hibernate.show_sql">${hibernate.show_sql:true}</prop>
-				<prop key="hibernate.format_sql">${hibernate.format_sql:true}</prop>
-				<prop key="hibernate.hbm2ddl.auto">none</prop>
-			</props>
-		</property>
-	</bean>
+<!-- 	<bean id="hibernateSessionFactory" -->
+<!-- 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 		<property name="packagesToScan"> -->
+<!-- 			<list> -->
+<!-- 				<value>tr.com.cookingmood</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 		<property name="hibernateProperties"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="hibernate.dialect">${hibernate.dialect}</prop> -->
+<!-- 				<prop key="hibernate.show_sql">${hibernate.show_sql:true}</prop> -->
+<!-- 				<prop key="hibernate.format_sql">${hibernate.format_sql:true}</prop> -->
+<!-- 				<prop key="hibernate.hbm2ddl.auto">none</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>

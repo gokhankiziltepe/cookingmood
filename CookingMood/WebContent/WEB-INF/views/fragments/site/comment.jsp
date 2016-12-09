@@ -20,8 +20,7 @@
 						<div class="large-10 medium-10 small-12 columns">
 							<p>
 								<strong><a href="" th:text="${comment.name}"></a></strong>, <span
-									th:text="${#dates.format(comment.createDate, 'dd/MM/yyyy HH:mm')}"></span>,
-								<span th:text="${comment.email}"></span>
+									th:text="${#dates.format(comment.createDate, 'dd/MM/yyyy HH:mm')}"></span>
 							</p>
 							<p th:text="${comment.text}"></p>
 							<p class="text-right"></p>

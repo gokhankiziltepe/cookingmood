@@ -1,17 +1,18 @@
-<!doctype html>
+<!doctype html >
 <html class="no-js" lang="tr">
 <head
 	th:include="fragments/site/headFragment :: headFragment (pageTitle='Blog - CookingMood', pageKeywords=${blogDetail?.tags})">
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
 	<section class="content-padding">
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns text-center">
 				<div class="head align-center">
-					<h2 class="margin0">Bloglar</h2>
+					<h2 class="margin0">BLOGLAR</h2>
 					<div class="filters text-center">
 						<a data-target='item'>Tümü</a> <a th:each="item : ${blogTypes}"
 							th:attrappend="data-target=${'category-' + item.status}"
@@ -38,7 +39,7 @@
 					<div class="entry-name">
 						<p class="data"
 							th:text="${#dates.format(item.updateDate, 'dd-MM-yyyy') + ' ' + item.blogType.title}"></p>
-						<h4 class="fontsans entry-title">
+						<h4 class="big">
 							<a th:href="@{'blog/' + ${item.id}}" th:text="${item.header}"></a>
 						</h4>
 						<p>

@@ -5,6 +5,7 @@
 </head>
 <body>
 	<!-- header -->
+	<div th:replace="fragments/site/body-start :: body-start"></div>
 	<div th:replace="fragments/site/header :: header"></div>
 	<!-- END header -->
 	<section class="content-padding">

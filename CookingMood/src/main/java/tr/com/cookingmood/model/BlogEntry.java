@@ -49,10 +49,6 @@ public class BlogEntry extends EntityBase {
 		this.blogType = blogType;
 	}
 
-	public String getWebdavPath() {
-		return CookingMoodUtils.getWebdavPath(this.header);
-	}
-
 	public String getTags() {
 		return tags;
 	}
