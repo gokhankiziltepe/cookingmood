@@ -14,4 +14,6 @@ public interface RecipeEntryRepository extends JpaRepository<RecipeEntry, Long> 
 
 	List<RecipeEntry> findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCase(String header, String tags);
 
+	List<RecipeEntry> findByWebdavPathAndActiveTrue(String webdavPath);
+
 }

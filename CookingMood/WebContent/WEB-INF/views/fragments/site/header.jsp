@@ -25,11 +25,11 @@
 							th:classappend="${#strings.contains(path,'/about-me') ? 'active' : ''}"
 							th:href="@{/about-me}">HAKKIMIZDA</a></li>
 						<li><a
-							th:classappend="${#strings.contains(path,'/recipe') ? 'active' : ''}"
-							th:href="@{/recipe}">TARİFLER</a>
+							th:classappend="${#strings.contains(path,'/tarif') ? 'active' : ''}"
+							th:href="@{/tarif}">TARİFLER</a>
 							<ul>
 								<li th:each="type : ${recipeTypes}"><a
-									th:href="@{'/recipe?type=' + ${type.status}}"
+									th:href="@{'/tarif?type=' + ${type.name}}"
 									th:text="${type.title}"></a></li>
 							</ul></li>
 						<li><a
@@ -37,7 +37,7 @@
 							th:href="@{/blog}">BLOG</a>
 							<ul>
 								<li th:each="type : ${blogTypes}"><a
-									th:href="@{'/blog?type=' + ${type.status}}"
+									th:href="@{'/blog?type=' + ${type.name}}"
 									th:text="${type.title}"></a></li>
 							</ul></li>
 						<li><a

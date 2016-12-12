@@ -9,8 +9,20 @@ jQuery(function() {
 		});
 		$(".filters a").on("click", function() {
 			filter_option = "." + $(this).attr("data-target").toString();
-			$('.item').not(filter_option).fadeTo(300, 0.1);
-			$(filter_option).fadeTo(300, 1);
+			$('.item').not(filter_option).addClass('faded-entry');
+			$(filter_option).removeClass('faded-entry');
+
+			var htmlContent = '';
+			$('.item:not(.faded-entry)').each(function(index, el) {
+				htmlContent += $(el)[0].outerHTML;
+			});
+			$('.item.faded-entry').each(function(index, el) {
+				htmlContent += $(el)[0].outerHTML;
+			});
+
+			$('.entries').html(htmlContent);
+			$('.item.faded-entry').fadeTo(300, 0.1);
+			$('.item:not(.faded-entry)').fadeTo(300, 1);
 		})
 
 		jQuery(window).load(function() {

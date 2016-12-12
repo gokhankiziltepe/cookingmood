@@ -15,7 +15,7 @@
 					<h2 class="margin0">BLOGLAR</h2>
 					<div class="filters text-center">
 						<a data-target='item'>Tümü</a> <a th:each="item : ${blogTypes}"
-							th:attrappend="data-target=${'category-' + item.status}"
+							th:attrappend="data-target=${'category-' + item.name}"
 							th:text="${item.title}"></a>
 					</div>
 				</div>
@@ -24,15 +24,15 @@
 
 		<!-- recipe list -->
 		<div class="wow bounceInUp" data-wow-offset="350">
-			<div class="row blog-entries">
+			<div class="row blog-entries entries">
 				<div th:each="item : ${blogs}"
-					th:classappend="${'category-' + item.blogType.status}"
+					th:classappend="${'category-' + item.blogType.name}"
 					class="item large-4 medium-6 small-12 columns">
 					<div class="cover">
-						<a th:href="@{'blog/' + ${item.id}}" class="like-it"><i
+						<a th:href="@{'blog/' + ${item.webdavPath}}" class="like-it"><i
 							class="fa fa-heart-o"></i>&nbsp;<span
-							th:text="${likeMap[item.id]}"></span></a><a class="entry-link"
-							th:href="@{'blog/' + ${item.id}}"></a><img
+							th:text="${likeMap[item.webdavPath]}"></span></a><a class="entry-link"
+							th:href="@{'blog/' + ${item.webdavPath}}"></a><img
 							style="margin: 0 auto;"
 							th:src="@{${webdavBase} + ${imageMap[item.id]}}" />
 					</div>
@@ -40,11 +40,11 @@
 						<p class="data"
 							th:text="${#dates.format(item.updateDate, 'dd-MM-yyyy') + ' ' + item.blogType.title}"></p>
 						<h4 class="big">
-							<a th:href="@{'blog/' + ${item.id}}" th:text="${item.header}"></a>
+							<a th:href="@{'blog/' + ${item.webdavPath}}" th:text="${item.header}"></a>
 						</h4>
 						<p>
 							<span th:utext="${#strings.abbreviate(item.text,100)}"></span><a
-								th:href="@{'blog/' + ${item.id}}" class="blue read">daha
+								th:href="@{'blog/' + ${item.webdavPath}}" class="blue read">daha
 								fazla...</a>
 						</p>
 					</div>

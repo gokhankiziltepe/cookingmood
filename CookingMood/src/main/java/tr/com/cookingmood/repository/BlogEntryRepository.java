@@ -10,4 +10,6 @@ import tr.com.cookingmood.model.BlogEntry;
 @Transactional
 public interface BlogEntryRepository extends JpaRepository<BlogEntry, Long> {
 	List<BlogEntry> findByActiveTrue();
+
+	List<BlogEntry> findByWebdavPathAndActiveTrue(String webdavPath);
 }

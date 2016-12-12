@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import tr.com.cookingmood.constants.BlogTypes;
 import tr.com.cookingmood.model.BlogEntry;
 import tr.com.cookingmood.service.BlogEntryService;
+import tr.com.cookingmood.utils.CookingMoodUtils;
 
 @Controller
 public class BlogEntryController {
@@ -33,6 +34,7 @@ public class BlogEntryController {
 			blogEntry = new BlogEntry();
 		}
 		blogEntry.setHeader(header);
+		blogEntry.setWebdavPath(CookingMoodUtils.getWebdavPath(header));
 		blogEntry.setText(content);
 		blogEntry.setTags(blogTag);
 		blogEntry.setBlogType(blogType);

@@ -7,13 +7,16 @@ import javax.persistence.Enumerated;
 import javax.persistence.Lob;
 
 import tr.com.cookingmood.constants.BlogTypes;
-import tr.com.cookingmood.utils.CookingMoodUtils;
 
 @SuppressWarnings("serial")
 @Entity(name = "BLOG_ENTRY")
 public class BlogEntry extends EntityBase {
 	@Column(name = "HEADER")
 	private String header;
+
+	@Column(name = "WEBDAV_PATH")
+	private String webdavPath;
+	
 	@Lob
 	@Column(name = "TEXT", length = 100000)
 	private String text;
@@ -55,6 +58,14 @@ public class BlogEntry extends EntityBase {
 
 	public void setTags(String tags) {
 		this.tags = tags;
+	}
+
+	public String getWebdavPath() {
+		return webdavPath;
+	}
+
+	public void setWebdavPath(String webdavPath) {
+		this.webdavPath = webdavPath;
 	}
 
 }

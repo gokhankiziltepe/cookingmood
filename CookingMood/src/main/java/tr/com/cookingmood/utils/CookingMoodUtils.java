@@ -1,5 +1,7 @@
 package tr.com.cookingmood.utils;
 
+import java.util.Locale;
+
 import org.springframework.util.StringUtils;
 
 public class CookingMoodUtils {
@@ -9,7 +11,7 @@ public class CookingMoodUtils {
 		for (int i = 0; i < olds.length; i++) {
 			text = text.replace(olds[i], news[i]);
 		}
-		text = text.toLowerCase();
+		text = text.toLowerCase(new Locale("tr", "TR"));
 		return text;
 	}
 

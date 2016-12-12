@@ -16,6 +16,7 @@ import tr.com.cookingmood.constants.RecipeDifficulties;
 import tr.com.cookingmood.constants.RecipeTypes;
 import tr.com.cookingmood.model.RecipeEntry;
 import tr.com.cookingmood.service.RecipeEntryService;
+import tr.com.cookingmood.utils.CookingMoodUtils;
 
 @Controller
 public class RecipeEntryController {
@@ -39,6 +40,7 @@ public class RecipeEntryController {
 			recipeEntry = new RecipeEntry();
 		}
 		recipeEntry.setHeader(recipeHeader);
+		recipeEntry.setWebdavPath(CookingMoodUtils.getWebdavPath(recipeHeader));
 		recipeEntry.setTags(recipeTag);
 		recipeEntry.setIngredients(recipeIngredient);
 		recipeEntry.setTools(recipeTool);

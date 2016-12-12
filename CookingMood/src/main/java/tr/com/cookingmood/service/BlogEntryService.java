@@ -13,5 +13,7 @@ public interface BlogEntryService {
 	List<BlogEntry> findAllActives();
 
 	BlogEntry findOne(Long id);
+	
+	BlogEntry findByWebdavPath(String webdavPath);
 
 }

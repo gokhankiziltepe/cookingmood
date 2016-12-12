@@ -15,6 +15,10 @@ public enum RecipeTypes {
 		return status;
 	}
 
+	public String getName() {
+		return name();
+	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}

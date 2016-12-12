@@ -1,7 +1,7 @@
 package tr.com.cookingmood.constants;
 
 public enum BlogTypes {
-	EXPLORE(1, "Keşifler"), ROUTINE(2, "Rutinler");
+	KESIFLER(1, "Keşifler"), RUTINLER(2, "Rutinler");
 	int status;
 	String title;
 
@@ -12,6 +12,10 @@ public enum BlogTypes {
 
 	public int getStatus() {
 		return status;
+	}
+
+	public String getName() {
+		return name();
 	}
 
 	public void setStatus(int status) {

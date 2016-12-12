@@ -66,7 +66,7 @@ public class SiteController {
 		return new ModelAndView("contact-me", modelMap);
 	}
 
-	@RequestMapping(value = "/recipe", method = RequestMethod.GET)
+	@RequestMapping(value = "/tarif", method = RequestMethod.GET)
 	public ModelAndView recipes(@RequestParam(name = "searchText", required = false) String searchText)
 			throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
@@ -103,14 +103,14 @@ public class SiteController {
 		return new ModelAndView("recipes", modelMap);
 	}
 
-	@RequestMapping(value = "/recipe/{id}", method = RequestMethod.GET)
-	public ModelAndView recipeDetail(@PathVariable("id") Long id) throws IOException {
+	@RequestMapping(value = "/tarif/{webdavPath}", method = RequestMethod.GET)
+	public ModelAndView recipeDetail(@PathVariable("webdavPath") String webdav) throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
-		RecipeEntry recipeEntry = recipeEntryService.findOne(id);
+		RecipeEntry recipeEntry = recipeEntryService.findByWebdavPath(webdav);
 		modelMap.put("recipeDetail", recipeEntry);
-		modelMap.put("entityBaseId", id);
+		modelMap.put("entityBaseId", recipeEntry.getId());
 
-		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(id);
+		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(recipeEntry.getId());
 		modelMap.put("comments", comments);
 
 		Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
@@ -174,14 +174,14 @@ public class SiteController {
 		return new ModelAndView("blogs", modelMap);
 	}
 
-	@RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
-	public ModelAndView blogDetail(@PathVariable("id") Long id) throws IOException {
+	@RequestMapping(value = "/blog/{webdavPath}", method = RequestMethod.GET)
+	public ModelAndView blogDetail(@PathVariable("webdavPath") String webdav) throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
-		BlogEntry blogEntry = blogEntryService.findOne(id);
+		BlogEntry blogEntry = blogEntryService.findByWebdavPath(webdav);
 		modelMap.put("blogDetail", blogEntry);
-		modelMap.put("entityBaseId", id);
+		modelMap.put("entityBaseId", blogEntry.getId());
 
-		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(id);
+		List<FeedbackComment> comments = feedbackCommentService.findByLikedEntity(blogEntry.getId());
 		modelMap.put("comments", comments);
 
 		Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);

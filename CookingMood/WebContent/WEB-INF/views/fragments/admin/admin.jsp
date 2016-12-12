@@ -25,6 +25,7 @@
 								<tr th:each="blogEntry: ${blogEntries}"
 									th:attr="data-blogid=${blogEntry.id}">
 									<td th:text="${blogEntry.header}"></td>
+									<td th:text="${blogEntry.webdavPath}"></td>
 									<td th:text="${blogEntry.blogType.title}"></td>
 									<td th:text="${blogEntry.createDate}"></td>
 									<td th:text="${blogEntry.updateDate}"></td>
@@ -98,6 +99,7 @@
 								<tr th:each="recipeEntry: ${recipeEntries}"
 									th:attr="data-recipeid=${recipeEntry.id}">
 									<td th:text="${recipeEntry.header}"></td>
+									<td th:text="${recipeEntry.webdavPath}"></td>
 									<td th:text="${recipeEntry.recipeType.title}"></td>
 									<td th:text="${recipeEntry.createDate}"></td>
 									<td th:text="${recipeEntry.updateDate}"></td>

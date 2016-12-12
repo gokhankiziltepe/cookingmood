@@ -8,13 +8,14 @@ import javax.persistence.Lob;
 
 import tr.com.cookingmood.constants.RecipeDifficulties;
 import tr.com.cookingmood.constants.RecipeTypes;
-import tr.com.cookingmood.utils.CookingMoodUtils;
 
 @SuppressWarnings("serial")
 @Entity(name = "RECIPE_ENTRY")
 public class RecipeEntry extends EntityBase {
 	@Column(name = "HEADER")
 	private String header;
+	@Column(name = "WEBDAV_PATH")
+	private String webdavPath;
 	@Lob
 	@Column(name = "INGREDIENTS", length = 50000)
 	private String ingredients;
@@ -112,6 +113,14 @@ public class RecipeEntry extends EntityBase {
 
 	public void setTools(String tools) {
 		this.tools = tools;
+	}
+
+	public String getWebdavPath() {
+		return webdavPath;
+	}
+
+	public void setWebdavPath(String webdavPath) {
+		this.webdavPath = webdavPath;
 	}
 
 }

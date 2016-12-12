@@ -2,6 +2,7 @@ package tr.com.cookingmood.service;
 
 import java.util.List;
 
+import tr.com.cookingmood.model.BlogEntry;
 import tr.com.cookingmood.model.RecipeEntry;
 
 public interface RecipeEntryService {
@@ -16,4 +17,5 @@ public interface RecipeEntryService {
 
 	List<RecipeEntry> findBySearchText(String text);
 
+	RecipeEntry findByWebdavPath(String webdavPath);
 }

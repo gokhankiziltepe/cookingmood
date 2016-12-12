@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import tr.com.cookingmood.model.BlogEntry;
 import tr.com.cookingmood.repository.BlogEntryRepository;
@@ -35,5 +36,14 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 	@Override
 	public List<BlogEntry> findAllActives() {
 		return repository.findByActiveTrue();
+	}
+
+	@Override
+	public BlogEntry findByWebdavPath(String webdavPath) {
+		List<BlogEntry> result = repository.findByWebdavPathAndActiveTrue(webdavPath);
+		if (!CollectionUtils.isEmpty(result)) {
+			return result.get(0);
+		}
+		return null;
 	}
 }
