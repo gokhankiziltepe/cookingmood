@@ -3,6 +3,7 @@
 <meta name="_csrf_parameter" th:attr="content=${_csrf.parameterName}" />
 <meta name="_csrf_header" content="X-CSRF-TOKEN" />
 <meta name="_csrf" th:attr="content=${_csrf.token}" />
+<meta name="robots" content="noindex, nofollow">
 <title th:include=":: #pageTitle">cookingmood</title>
 <link th:href="@{/resources/bootstrap/css/bootstrap.min.css}"
 	href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
