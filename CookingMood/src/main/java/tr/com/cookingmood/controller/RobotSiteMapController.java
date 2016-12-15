@@ -40,8 +40,7 @@ public class RobotSiteMapController {
 	}
 
 	@RequestMapping(value = "/sitemap.xml", method = RequestMethod.GET)
-	@ResponseBody
-	public XmlUrlSet main() {
+	public @ResponseBody XmlUrlSet main() {
 		XmlUrlSet xmlUrlSet = new XmlUrlSet();
 		create(xmlUrlSet, "", Priority.HIGH);
 		create(xmlUrlSet, "/tarif", Priority.HIGH);

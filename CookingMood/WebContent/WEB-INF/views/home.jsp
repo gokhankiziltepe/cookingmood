@@ -48,7 +48,7 @@
 							$("span.error").parent().addClass('hide');
 							var data = $("#commentForm").serialize();
 							/*[+
-							var urlToload=[[@{/recipe}]]; 
+							var urlToload=[[@{/tarif}]]; 
 							+]*/
 							var searchText = $('[name=searchText]').val();
 							window.location.href = urlToload + '?searchText=' + searchText;

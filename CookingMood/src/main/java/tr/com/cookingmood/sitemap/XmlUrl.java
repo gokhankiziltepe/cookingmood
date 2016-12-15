@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 
 @XmlAccessorType(value = XmlAccessType.NONE)
-@XmlRootElement(name = "url")
+@XmlRootElement(name = "url", namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 public class XmlUrl {
 	public enum Priority {
 		HIGH("1.0"), MEDIUM("0.5");
@@ -25,16 +25,16 @@ public class XmlUrl {
 		}
 	}
 
-	@XmlElement
+	@XmlElement(namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 	private String loc;
 
-	@XmlElement
+	@XmlElement(namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 	private String lastmod = new DateTime().toString(DateTimeFormat.forPattern("yyyy-MM-dd"));
 
-	@XmlElement
+	@XmlElement(namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 	private String changefreq = "daily";
 
-	@XmlElement
+	@XmlElement(namespace = "http://www.sitemaps.org/schemas/sitemap/0.9")
 	private String priority;
 
 	public XmlUrl() {
