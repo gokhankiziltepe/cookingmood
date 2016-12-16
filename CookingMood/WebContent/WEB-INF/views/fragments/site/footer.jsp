@@ -25,16 +25,16 @@
 							th:classappend="${#strings.equals(path,'/') ? 'active' : ''}"
 							th:href="@{/}">ANA SAYFA</a></li>
 						<li><a
-							th:classappend="${#strings.contains(path,'/about-us') ? 'active' : ''}"
+							th:classappend="${#strings.contains(path,'/about-me') ? 'active' : ''}"
 							th:href="@{/about-us}">HAKKIMIZDA</a></li>
 						<li><a
-							th:classappend="${#strings.contains(path,'/recipe') ? 'active' : ''}"
+							th:classappend="${#strings.contains(path,'/tarif') ? 'active' : ''}"
 							th:href="@{/recipe}">TARİFLER</a></li>
 						<li><a
 							th:classappend="${#strings.contains(path,'/blog') ? 'active' : ''}"
 							th:href="@{/blog}">BLOG</a></li>
 						<li><a
-							th:classappend="${#strings.contains(path,'/contact-us') ? 'active' : ''}"
+							th:classappend="${#strings.contains(path,'/contact-me') ? 'active' : ''}"
 							th:href="@{/contact-us}">İLETİŞİM</a></li>
 					</ul>
 				</div>
