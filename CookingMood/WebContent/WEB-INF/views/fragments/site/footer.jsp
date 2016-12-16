@@ -26,16 +26,16 @@
 							th:href="@{/}">ANA SAYFA</a></li>
 						<li><a
 							th:classappend="${#strings.contains(path,'/about-me') ? 'active' : ''}"
-							th:href="@{/about-us}">HAKKIMIZDA</a></li>
+							th:href="@{/about-me}">HAKKIMIZDA</a></li>
 						<li><a
 							th:classappend="${#strings.contains(path,'/tarif') ? 'active' : ''}"
-							th:href="@{/recipe}">TARİFLER</a></li>
+							th:href="@{/tarif}">TARİFLER</a></li>
 						<li><a
 							th:classappend="${#strings.contains(path,'/blog') ? 'active' : ''}"
 							th:href="@{/blog}">BLOG</a></li>
 						<li><a
 							th:classappend="${#strings.contains(path,'/contact-me') ? 'active' : ''}"
-							th:href="@{/contact-us}">İLETİŞİM</a></li>
+							th:href="@{/contact-me}">İLETİŞİM</a></li>
 					</ul>
 				</div>
 			</div>
