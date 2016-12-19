@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.github.sardine.Sardine;
 import com.github.sardine.SardineFactory;
 
+import tr.com.cookingmood.utils.CookingMoodUtils;
+
 @Controller
 public class ImageController {
 	static final Logger LOGGER = LoggerFactory.getLogger(ImageController.class);
@@ -52,8 +54,9 @@ public class ImageController {
 		if (!sardine.exists(path.toString())) {
 			sardine.createDirectory(path.toString());
 		}
-		path.append("/" + file.getOriginalFilename());
-		sardine.put(path.toString(), file.getBytes());
+
+		path.append("/" + CookingMoodUtils.generateRandomFileName());
+		sardine.put(path.toString(), CookingMoodUtils.resizeImage(file.getBytes(), type));
 		return new HashMap<>();
 	}
 
