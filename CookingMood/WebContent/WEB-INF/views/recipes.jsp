@@ -29,7 +29,7 @@
 					th:classappend="${'category-' + item.recipeType.name}"
 					class="item large-3 medium-6 small-12 columns" data-equalizer-watch>
 					<div class="recipe text-center">
-						<div class="recipe-cover">
+						<div class="recipe-cover cover">
 							<a th:href="@{'tarif/' + ${item.webdavPath}}" class="like"><i
 								class="fa fa-heart-o"></i><span th:text="${likeMap[item.id]}"></span></a>
 							<a th:href="@{'tarif/' + ${item.webdavPath}}" class="type"

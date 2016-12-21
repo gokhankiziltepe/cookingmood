@@ -7,7 +7,9 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
+	<session-config> 
+    	<session-timeout>60</session-timeout>
+	</session-config>
 	<servlet>
 		<servlet-name>cookingmood</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

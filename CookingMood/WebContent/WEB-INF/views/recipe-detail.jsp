@@ -47,7 +47,7 @@
 						<li>Tür: <span th:text="${recipeDetail?.recipeType.title}"></span></li>
 						<li>Zorluk: <span
 							th:text="${recipeDetail?.recipeDifficulty.title}"></span></li>
-						<li>Süre: <span th:text="${recipeDetail?.durationInMinutes}"></span></li>
+						<li>Süre: <span th:text="${recipeDetail?.durationInMinutes}"></span> dakika</li>
 					</ul>
 				</div>
 				<br />

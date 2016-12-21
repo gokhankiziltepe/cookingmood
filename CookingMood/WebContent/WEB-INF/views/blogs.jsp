@@ -30,7 +30,7 @@
 					class="item large-4 medium-6 small-12 columns">
 					<div class="cover">
 						<a th:href="@{'blog/' + ${item.webdavPath}}" class="like-it"><i
-							class="fa fa-heart-o"></i>&nbsp;<span
+							class="fa fa-heart-o"></i>&nbsp;<span th:text="${likeMap[item.id]}"></span><span
 							th:text="${likeMap[item.webdavPath]}"></span></a><a class="entry-link"
 							th:href="@{'blog/' + ${item.webdavPath}}"></a><img
 							style="margin: 0 auto;"

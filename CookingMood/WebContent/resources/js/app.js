@@ -21,8 +21,8 @@ jQuery(function() {
 			});
 
 			$('.entries').html(htmlContent);
-			$('.item.faded-entry').fadeTo(300, 0.1);
-			$('.item:not(.faded-entry)').fadeTo(300, 1);
+			$('.item.faded-entry').hide();
+			$('.item:not(.faded-entry)').fadeIn();
 		})
 
 		jQuery(window).load(function() {
