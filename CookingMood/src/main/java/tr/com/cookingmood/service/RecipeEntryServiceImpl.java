@@ -35,17 +35,17 @@ public class RecipeEntryServiceImpl implements RecipeEntryService {
 
 	@Override
 	public List<RecipeEntry> findAllActives() {
-		return repository.findByActiveTrue();
+		return repository.findByActiveTrueOrderByItemOrderAsc();
 	}
 
 	@Override
 	public List<RecipeEntry> findBySearchText(String text) {
-		return repository.findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCase(text, text);
+		return repository.findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCaseOrderByItemOrderAsc(text, text);
 	}
 
 	@Override
 	public RecipeEntry findByWebdavPath(String webdavPath) {
-		List<RecipeEntry> result = repository.findByWebdavPathAndActiveTrue(webdavPath);
+		List<RecipeEntry> result = repository.findByWebdavPathAndActiveTrueOrderByItemOrderAsc(webdavPath);
 		if (!CollectionUtils.isEmpty(result)) {
 			return result.get(0);
 		}

@@ -35,12 +35,12 @@ public class BlogEntryServiceImpl implements BlogEntryService {
 
 	@Override
 	public List<BlogEntry> findAllActives() {
-		return repository.findByActiveTrue();
+		return repository.findByActiveTrueOrderByItemOrderAsc();
 	}
 
 	@Override
 	public BlogEntry findByWebdavPath(String webdavPath) {
-		List<BlogEntry> result = repository.findByWebdavPathAndActiveTrue(webdavPath);
+		List<BlogEntry> result = repository.findByWebdavPathAndActiveTrueOrderByItemOrderAsc(webdavPath);
 		if (!CollectionUtils.isEmpty(result)) {
 			return result.get(0);
 		}

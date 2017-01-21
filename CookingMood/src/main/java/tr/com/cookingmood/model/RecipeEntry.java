@@ -42,6 +42,9 @@ public class RecipeEntry extends EntityBase {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "RECIPE_DIFFICULTY")
 	private RecipeDifficulties recipeDifficulty;
+	
+	@Column(name = "ITEM_ORDER")
+	private Integer itemOrder;
 
 	public String getIngredients() {
 		return ingredients;
@@ -121,6 +124,14 @@ public class RecipeEntry extends EntityBase {
 
 	public void setWebdavPath(String webdavPath) {
 		this.webdavPath = webdavPath;
+	}
+
+	public Integer getItemOrder() {
+		return itemOrder;
+	}
+
+	public void setItemOrder(Integer itemOrder) {
+		this.itemOrder = itemOrder;
 	}
 
 }

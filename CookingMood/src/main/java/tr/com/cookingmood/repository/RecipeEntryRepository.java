@@ -10,10 +10,10 @@ import tr.com.cookingmood.model.RecipeEntry;
 @Transactional
 public interface RecipeEntryRepository extends JpaRepository<RecipeEntry, Long> {
 
-	List<RecipeEntry> findByActiveTrue();
+	List<RecipeEntry> findByActiveTrueOrderByItemOrderAsc();
 
-	List<RecipeEntry> findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCase(String header, String tags);
+	List<RecipeEntry> findByHeaderContainingIgnoreCaseOrTagsContainingIgnoreCaseOrderByItemOrderAsc(String header, String tags);
 
-	List<RecipeEntry> findByWebdavPathAndActiveTrue(String webdavPath);
+	List<RecipeEntry> findByWebdavPathAndActiveTrueOrderByItemOrderAsc(String webdavPath);
 
 }

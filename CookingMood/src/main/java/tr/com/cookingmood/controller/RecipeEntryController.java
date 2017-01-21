@@ -32,7 +32,7 @@ public class RecipeEntryController {
 			@RequestParam("recipeType") RecipeTypes recipeType,
 			@RequestParam("recipeDifficulty") RecipeDifficulties recipeDifficulty,
 			@RequestParam("recipeTool") String recipeTool, @RequestParam("recipeTag") String recipeTag,
-			@RequestParam("recipeDuration") int recipeDuration) {
+			@RequestParam("recipeDuration") int recipeDuration, @RequestParam("recipeItemOrder") Integer itemOrder) {
 		RecipeEntry recipeEntry = null;
 		if (id != null) {
 			recipeEntry = recipeEntryService.findOne(id);
@@ -49,6 +49,7 @@ public class RecipeEntryController {
 		recipeEntry.setRecipeType(recipeType);
 		recipeEntry.setRecipeDifficulty(recipeDifficulty);
 		recipeEntry.setDurationInMinutes(recipeDuration);
+		recipeEntry.setItemOrder(itemOrder);
 		recipeEntryService.save(recipeEntry);
 		return new HashMap<>();
 	}

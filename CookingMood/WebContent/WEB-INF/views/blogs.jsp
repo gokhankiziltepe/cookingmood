@@ -43,7 +43,7 @@
 							<a th:href="@{'blog/' + ${item.webdavPath}}" th:text="${item.header}"></a>
 						</h4>
 						<p>
-							<span th:utext="${#strings.abbreviate(item.text,100)}"></span><a
+							<span th:utext="${#strings.abbreviate(item.text, 100)}"></span><a
 								th:href="@{'blog/' + ${item.webdavPath}}" class="blue read">daha
 								fazla...</a>
 						</p>

@@ -21,6 +21,11 @@
 								th:value="${recipeEntry?.tags}" />
 						</div>
 						<div class="form-group">
+							<label for="recipeItemOrder">sıra</label> <input type="number"
+								class="form-control" name="recipeItemOrder" id="recipeItemOrder"
+								th:value="${recipeEntry?.itemOrder}" />
+						</div>
+						<div class="form-group">
 							<label for="recipeType">tarif tipi</label> <select
 								name="recipeType" id="recipeType" class="form-control">
 								<option th:each="type : ${recipeTypes}" th:value="${type}"
@@ -73,9 +78,11 @@
 						</div>
 						<button type="submit" class="btn btn-default">gönder</button>
 					</form>
-					
+
 					<script type="text/javascript">
 						$(function() {
+							CKEDITOR.config.entities_latin=false;
+							
 							CKEDITOR.replace('recipeTool');
 
 							CKEDITOR.replace('recipeIngredient');
@@ -118,6 +125,11 @@
 										required : true,
 										min : 2,
 										max : 1000
+									},
+									recipeItemOrder : {
+										required : true,
+										number : true,
+										maxlength : 4
 									}
 								},
 								submitHandler : function(form) {

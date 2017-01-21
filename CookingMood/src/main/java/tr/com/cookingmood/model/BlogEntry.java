@@ -16,7 +16,7 @@ public class BlogEntry extends EntityBase {
 
 	@Column(name = "WEBDAV_PATH")
 	private String webdavPath;
-	
+
 	@Lob
 	@Column(name = "TEXT", length = 100000)
 	private String text;
@@ -27,6 +27,9 @@ public class BlogEntry extends EntityBase {
 
 	@Column(name = "TAGS", length = 1024)
 	private String tags;
+
+	@Column(name = "ITEM_ORDER")
+	private Integer itemOrder;
 
 	public String getText() {
 		return text;
@@ -66,6 +69,14 @@ public class BlogEntry extends EntityBase {
 
 	public void setWebdavPath(String webdavPath) {
 		this.webdavPath = webdavPath;
+	}
+
+	public Integer getItemOrder() {
+		return itemOrder;
+	}
+
+	public void setItemOrder(Integer itemOrder) {
+		this.itemOrder = itemOrder;
 	}
 
 }

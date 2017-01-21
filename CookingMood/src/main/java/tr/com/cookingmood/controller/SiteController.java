@@ -49,8 +49,34 @@ public class SiteController {
 	private String webdavPassword;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home() {
+	public ModelAndView home() throws IOException {
 		Map<String, Object> modelMap = new HashMap<>();
+		List<RecipeEntry> recipes = recipeEntryService.findAllActives();
+		if (!CollectionUtils.isEmpty(recipes) && recipes.size() > 4) {
+			recipes = recipes.subList(0, 4);
+		}
+		modelMap.put("recipes", recipes);
+		Map<Long, Object> likeMap = new HashMap<>();
+		Map<Long, String> imageMap = new HashMap<>();
+		for (RecipeEntry item : recipes) {
+			int countByLikedEntity = feedbackLikeService.countByLikedEntity(item.getId());
+			likeMap.put(item.getId(), countByLikedEntity);
+
+			Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
+			String url = webdavPath + "/images/main/" + item.getId();
+			if (sardine.exists(url)) {
+				List<DavResource> resources = sardine.list(url);
+				for (DavResource res : resources) {
+					String path = res.getPath();
+					if (CookingMoodUtils.isValidResourcePath(path)) {
+						imageMap.put(item.getId(), CookingMoodUtils.getWebdavResourcePath(res.getHref().getPath()));
+						break;
+					}
+				}
+			}
+		}
+		modelMap.put("likeMap", likeMap);
+		modelMap.put("imageMap", imageMap);
 		return new ModelAndView("home", modelMap);
 	}
 

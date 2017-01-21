@@ -7,23 +7,41 @@
 		<div class="hero-unit">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<form name="footerContentForm" id="footerContentForm">
-						<input type="hidden" id="id" name="id"
-							th:if="${footerContent != null}" th:value="${footerContent?.id}" />
+					<form
+						name="footerContentForm"
+						id="footerContentForm"
+					>
+						<input
+							type="hidden"
+							id="id"
+							name="id"
+							th:if="${footerContent != null}"
+							th:value="${footerContent?.id}"
+						/>
 						<div class="form-group">
 							<label for="htmlContent">içerik</label>
-							<textarea class="form-control" name="htmlContent" rows="10"
-								maxlength="100000" cols="80" id="htmlContent"
-								th:text="${footerContent?.htmlContent}"></textarea>
+							<textarea
+								class="form-control"
+								name="htmlContent"
+								rows="10"
+								maxlength="100000"
+								cols="80"
+								id="htmlContent"
+								th:text="${footerContent?.htmlContent}"
+							></textarea>
 						</div>
 						<div class="form-group hide">
 							<span class="error text-danger">lütfen form alanlarını
 								kontrol ediniz</span>
 						</div>
-						<button type="submit" class="btn btn-default">gönder</button>
+						<button
+							type="submit"
+							class="btn btn-default"
+						>gönder</button>
 					</form>
 					<script type="text/javascript">
 						$(function() {
+							CKEDITOR.config.entities_latin = false;
 							CKEDITOR.replace('htmlContent');
 							setInterval(function() {
 								for ( var instance in CKEDITOR.instances) {

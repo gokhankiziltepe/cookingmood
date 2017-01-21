@@ -21,6 +21,11 @@
 								th:value="${blogEntry?.tags}" />
 						</div>
 						<div class="form-group">
+							<label for="blogItemOrder">sıra</label> <input type="number"
+								class="form-control" name="blogItemOrder" id="blogItemOrder"
+								th:value="${blogEntry?.itemOrder}" />
+						</div>
+						<div class="form-group">
 							<label for="blogType">blog tipi</label> <select name="blogType"
 								id="blogType" class="form-control">
 								<option th:each="type : ${blogTypes}" th:value="${type}"
@@ -42,6 +47,7 @@
 					</form>
 					<script type="text/javascript">
 						$(function() {
+							CKEDITOR.config.entities_latin=false;
 							CKEDITOR.replace('blogContent');
 							setInterval(function() {
 								for ( var instance in CKEDITOR.instances) {
@@ -68,6 +74,11 @@
 									blogContent : {
 										required : true,
 										minlength : 2
+									},
+									blogItemOrder : {
+										required : true,
+										number : true,
+										maxlength : 4
 									}
 								},
 								submitHandler : function(form) {
