@@ -7,7 +7,7 @@
 <meta name="description" th:content="${pageTitle}">
 <meta name="author" content="Ayça Erdem - CookingMood">
 <title th:text="${pageTitle}"></title>
-<link rel="alternate" href="cookingmood.co" hreflang="tr-tr" />
+<link rel="alternate" href="//cookingmood.co/" hreflang="tr-tr" />
 <link rel="icon" th:href="@{/resources/images/team/team-member-1.jpg}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" th:href="@{/resources/css/style.css}" />
