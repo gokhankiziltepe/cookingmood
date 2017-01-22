@@ -23,7 +23,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="aycagokhan" password="ayca" authorities="ROLE_ADMIN" />
+				<user name="aycaerdem" password="cookingmood" authorities="ROLE_ADMIN" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
