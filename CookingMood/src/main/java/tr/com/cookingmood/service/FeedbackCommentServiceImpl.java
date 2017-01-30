@@ -23,7 +23,7 @@ public class FeedbackCommentServiceImpl implements FeedbackCommentService {
 
 	@Override
 	public List<FeedbackComment> findByLikedEntity(Long id) {
-		return repository.findByLikedEntity_IdAndActiveTrueOrderByCreateDateDesc(id);
+		return repository.findByLikedEntity_IdAndActiveTrueOrderByLikedEntity_CreateDateDesc(id);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class FeedbackCommentServiceImpl implements FeedbackCommentService {
 
 	@Override
 	public List<FeedbackComment> findByLikedEntityAll(Long id) {
-		return repository.findByLikedEntity_IdOrderByCreateDateDesc(id);
+		return repository.findByLikedEntity_IdOrderByLikedEntity_CreateDateDesc(id);
 	}
 
 }
