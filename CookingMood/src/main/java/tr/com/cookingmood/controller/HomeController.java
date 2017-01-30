@@ -71,16 +71,6 @@ public class HomeController {
 		if (id != null) {
 			BlogEntry blogEntry = blogEntryService.findOne(id);
 			modelMap.put("blogEntry", blogEntry);
-			List<String> headerImagePaths = new ArrayList<>();
-			Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
-			List<DavResource> resources = sardine.list(webdavPath + "/images/header/" + id);
-			for (DavResource res : resources) {
-				String path = res.getPath();
-				if (CookingMoodUtils.isValidResourcePath(path)) {
-					headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
-				}
-			}
-			modelMap.put("headerImagePaths", headerImagePaths);
 		}
 		return new ModelAndView("blog-entry", modelMap);
 	}
@@ -93,16 +83,6 @@ public class HomeController {
 		if (id != null) {
 			RecipeEntry recipeEntry = recipeEntryService.findOne(id);
 			modelMap.put("recipeEntry", recipeEntry);
-			List<String> headerImagePaths = new ArrayList<>();
-			Sardine sardine = SardineFactory.begin(webdavUsername, webdavPassword);
-			List<DavResource> resources = sardine.list(webdavPath + "/images/header/" + id);
-			for (DavResource res : resources) {
-				String path = res.getPath();
-				if (CookingMoodUtils.isValidResourcePath(path)) {
-					headerImagePaths.add(CookingMoodUtils.getWebdavResourcePath(path));
-				}
-			}
-			modelMap.put("headerImagePaths", headerImagePaths);
 		}
 		return new ModelAndView("recipe-entry", modelMap);
 	}
